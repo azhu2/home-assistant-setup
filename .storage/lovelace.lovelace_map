@@ -1,0 +1,2456 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.lovelace_map",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "title": "Mobile",
+          "path": "mobile",
+          "subview": false,
+          "type": "custom:vertical-layout",
+          "layout": {
+            "max_cols": 1
+          },
+          "badges": [],
+          "cards": [
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "entity": "sensor.active_cast_devices",
+                  "state_not": "0"
+                }
+              ],
+              "card": {
+                "type": "vertical-stack",
+                "title": "Music",
+                "cards": [
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.everywhere",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.downstairs",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.upstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.upstairs",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.kitchen_display",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.kitchen_display",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.kitchen_display",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.kitchen_display",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.kitchen_display",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.kitchen_display",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.living_room_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.living_room_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.living_room_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.living_room_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.living_room_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.living_room_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.hallway_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.hallway_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.hallway_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.hallway_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.hallway_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.hallway_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.bedroom_nest",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bedroom_nest",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.bedroom_nest",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bedroom_nest",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.bedroom_nest",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bedroom_nest",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.bathroom_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bathroom_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.bathroom_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bathroom_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.bathroom_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bathroom_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.office_nests_2",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.office_nests_2",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.office_nests_2",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.office_nests_2",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.office_nests_2",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.office_nests_2",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "grid",
+              "title": "Living Room",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "switch.marble_lamp"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.pendant_lamp"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.christmas_tree"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.air_purifier"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Family Room",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "light.family_room_lights",
+                  "name": "Can Lights",
+                  "icon": ""
+                },
+                {
+                  "type": "button",
+                  "entity": "light.family_room_chandelier",
+                  "name": "Chandelier"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Kitchen",
+              "square": false,
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.kitchen_lights",
+                  "name": "Can Lights"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.kitchen_chandelier",
+                  "name": "Chandelier"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Master Bedroom",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "light.master_light"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Outside",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "switch.front_door_lights",
+                  "name": "Front Door"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.outdoor_lights",
+                  "name": "Backyard"
+                },
+                {
+                  "type": "button",
+                  "entity": "cover.garage_door",
+                  "tap_action": {
+                    "action": "toggle"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "title": "Sprinklers",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "square": false,
+                  "cards": [
+                    {
+                      "type": "button",
+                      "entity": "switch.lawn_schedule",
+                      "name": "Lawn"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.roses_schedule_2",
+                      "name": "Roses"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "square": false,
+                  "cards": [
+                    {
+                      "type": "button",
+                      "entity": "switch.backyard_primary"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.backyard_secondary"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.front_yard_primary"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.front_yard_secondary"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.backyard_drip"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Cameras",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "camera.front_door",
+                  "name": "Front Door"
+                },
+                {
+                  "type": "button",
+                  "entity": "camera.front_yard_camera_2",
+                  "name": "Front Yard"
+                },
+                {
+                  "type": "button",
+                  "entity": "camera.backyard_cam",
+                  "name": "Backyard"
+                },
+                {
+                  "type": "button",
+                  "entity": "camera.living_room_camera_2",
+                  "name": "Living Room"
+                },
+                {
+                  "type": "button",
+                  "entity": "camera.family_room_camera_2",
+                  "name": "Family Room"
+                }
+              ]
+            },
+            {
+              "square": false,
+              "columns": 2,
+              "type": "grid",
+              "title": "Network",
+              "cards": [
+                {
+                  "type": "sensor",
+                  "entity": "sensor.online_devices",
+                  "graph": "line",
+                  "detail": 2
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.adguard_dns_queries_blocked_ratio",
+                  "name": "DNS queries blocked",
+                  "graph": "line",
+                  "detail": 2
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.1m_download_max",
+                  "name": "Download",
+                  "detail": 2,
+                  "icon": "mdi:trending-down"
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.1m_upload_max",
+                  "name": "Upload",
+                  "detail": 2,
+                  "icon": "mdi:trending-down"
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.24h_download_avg",
+                  "name": "24h avg",
+                  "icon": "mdi:clock",
+                  "detail": 1
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.24h_upload_avg",
+                  "name": "24h avg",
+                  "icon": "mdi:clock",
+                  "detail": 1
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.top_download_device",
+                  "name": "Top Client",
+                  "detail": 1,
+                  "icon": "mdi:devices"
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.top_upload_device",
+                  "name": "Top Client",
+                  "detail": 1,
+                  "icon": "mdi:devices"
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.top_download",
+                  "name": "Rate",
+                  "graph": "line",
+                  "detail": 2
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.top_upload",
+                  "name": "Rate",
+                  "graph": "line",
+                  "detail": 2
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.adguard_protection",
+                  "name": "Adguard Off (30 min)",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.adguard_home_off_30_min"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Desktop",
+          "path": "main",
+          "subview": false,
+          "type": "custom:vertical-layout",
+          "layout": {
+            "max_cols": 4
+          },
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "title": "Now",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# {{ now().timestamp() | timestamp_custom('%A %B %-d, %Y') }}\n## {{ now().timestamp() | timestamp_custom('%I:%M %p') }}\n"
+                }
+              ]
+            },
+            {
+              "show_current": true,
+              "show_forecast": false,
+              "type": "weather-forecast",
+              "name": "Napa",
+              "entity": "weather.dark_sky",
+              "secondary_info_attribute": "wind_speed"
+            },
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "entity": "sensor.active_cast_devices",
+                  "state_not": "0"
+                }
+              ],
+              "card": {
+                "type": "vertical-stack",
+                "title": "Music",
+                "cards": [
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.everywhere",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.downstairs",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.upstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.upstairs",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.kitchen_display",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.kitchen_display",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.kitchen_display",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.kitchen_display",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.kitchen_display",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.kitchen_display",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.living_room_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.living_room_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.living_room_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.living_room_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.living_room_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.living_room_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.hallway_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.hallway_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.hallway_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.hallway_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.hallway_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.hallway_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.bedroom_nest",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bedroom_nest",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.bedroom_nest",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bedroom_nest",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.bedroom_nest",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bedroom_nest",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.bathroom_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bathroom_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.bathroom_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bathroom_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.bathroom_speaker",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.bathroom_speaker",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.downstairs",
+                        "state": "off"
+                      },
+                      {
+                        "entity": "media_player.office_nests_2",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.office_nests_2",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.everywhere",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.office_nests_2",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.office_nests_2",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "conditional",
+                    "conditions": [
+                      {
+                        "entity": "media_player.downstairs",
+                        "state_not": "off"
+                      },
+                      {
+                        "entity": "media_player.office_nests_2",
+                        "state_not": "off"
+                      }
+                    ],
+                    "card": {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.office_nests_2",
+                      "group": true,
+                      "artwork": "cover",
+                      "idle_view": "when_idle",
+                      "hide": {
+                        "icon": true,
+                        "power": true,
+                        "controls": true,
+                        "info": true,
+                        "progress": true,
+                        "artwork_border": true
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "custom:layout-break"
+            },
+            {
+              "type": "grid",
+              "title": "Living Room",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "switch.marble_lamp"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.pendant_lamp"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.christmas_tree"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.air_purifier"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Family Room",
+              "square": false,
+              "cards": [
+                {
+                  "type": "light",
+                  "entity": "light.family_room_lights",
+                  "name": "Can Lights",
+                  "icon": ""
+                },
+                {
+                  "type": "light",
+                  "entity": "light.family_room_chandelier",
+                  "name": "Chandelier"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Kitchen",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "switch.kitchen_lights",
+                  "name": "Can Lights"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.kitchen_chandelier",
+                  "name": "Chandelier"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Master Bedroom",
+              "square": false,
+              "cards": [
+                {
+                  "type": "light",
+                  "entity": "light.master_light"
+                }
+              ]
+            },
+            {
+              "type": "custom:layout-break"
+            },
+            {
+              "type": "grid",
+              "title": "Outside",
+              "square": false,
+              "cards": [
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.front_door_lights",
+                  "name": "Front Door"
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.outdoor_lights",
+                  "name": "Backyard"
+                },
+                {
+                  "type": "button",
+                  "entity": "cover.garage_door",
+                  "tap_action": {
+                    "action": "toggle"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "title": "Sprinklers",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "square": false,
+                  "cards": [
+                    {
+                      "type": "button",
+                      "entity": "switch.lawn_schedule",
+                      "name": "Lawn"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.roses_schedule_2",
+                      "name": "Roses"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "square": false,
+                  "cards": [
+                    {
+                      "type": "button",
+                      "entity": "switch.backyard_primary"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.backyard_secondary"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.front_yard_primary"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.front_yard_secondary"
+                    },
+                    {
+                      "type": "button",
+                      "entity": "switch.backyard_drip"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Cameras",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "camera.front_door",
+                  "name": "Front Door"
+                },
+                {
+                  "type": "button",
+                  "entity": "camera.front_yard_camera_2",
+                  "name": "Front Yard"
+                },
+                {
+                  "type": "button",
+                  "entity": "camera.backyard_cam",
+                  "name": "Backyard"
+                },
+                {
+                  "type": "button",
+                  "entity": "camera.living_room_camera_2",
+                  "name": "Living Room"
+                },
+                {
+                  "type": "button",
+                  "entity": "camera.family_room_camera_2",
+                  "name": "Family Room"
+                }
+              ]
+            },
+            {
+              "type": "custom:layout-break"
+            },
+            {
+              "square": false,
+              "columns": 2,
+              "type": "grid",
+              "title": "Network",
+              "cards": [
+                {
+                  "type": "sensor",
+                  "entity": "sensor.online_devices",
+                  "graph": "line",
+                  "detail": 2
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.adguard_dns_queries_blocked_ratio",
+                  "name": "DNS queries blocked",
+                  "graph": "line",
+                  "detail": 2
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.1m_download_max",
+                  "name": "Download",
+                  "detail": 2,
+                  "icon": "mdi:trending-down"
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "line",
+                  "type": "sensor",
+                  "entity": "sensor.1m_upload_max",
+                  "name": "Upload",
+                  "detail": 2,
+                  "icon": "mdi:trending-down"
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.24h_download_avg",
+                  "name": "24h avg",
+                  "icon": "mdi:clock",
+                  "detail": 1
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.24h_upload_avg",
+                  "name": "24h avg",
+                  "icon": "mdi:clock",
+                  "detail": 1
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.top_download_device",
+                  "name": "Top Client",
+                  "detail": 1,
+                  "icon": "mdi:devices"
+                },
+                {
+                  "hours_to_show": 24,
+                  "graph": "none",
+                  "type": "sensor",
+                  "entity": "sensor.top_upload_device",
+                  "name": "Top Client",
+                  "detail": 1,
+                  "icon": "mdi:devices"
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.top_download",
+                  "name": "Rate",
+                  "graph": "line",
+                  "detail": 2
+                },
+                {
+                  "type": "sensor",
+                  "entity": "sensor.top_upload",
+                  "name": "Rate",
+                  "graph": "line",
+                  "detail": 2
+                },
+                {
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "entity": "switch.adguard_protection",
+                  "name": "Adguard Off (30 min)",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.adguard_home_off_30_min"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Playground",
+          "path": "playgorund",
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.everywhere",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.downstairs",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.everywhere",
+                      "state": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.downstairs",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.upstairs",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.everywhere",
+                      "state": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.upstairs",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.downstairs",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.kitchen_display",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.kitchen_display",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.kitchen_display",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.kitchen_display",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.downstairs",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.kitchen_display",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.kitchen_display",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.downstairs",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.living_room_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.living_room_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.living_room_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.living_room_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.downstairs",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.living_room_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.living_room_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.downstairs",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.hallway_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.hallway_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.hallway_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.hallway_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.downstairs",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.hallway_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.hallway_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.downstairs",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.bedroom_nest",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.bedroom_nest",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.bedroom_nest",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.bedroom_nest",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.downstairs",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.bedroom_nest",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.bedroom_nest",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.downstairs",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.bathroom_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.bathroom_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.bathroom_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.bathroom_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.downstairs",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.bathroom_speaker",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.bathroom_speaker",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.downstairs",
+                      "state": "off"
+                    },
+                    {
+                      "entity": "media_player.office_nests_2",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.office_nests_2",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.everywhere",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.office_nests_2",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.office_nests_2",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "media_player.downstairs",
+                      "state_not": "off"
+                    },
+                    {
+                      "entity": "media_player.office_nests_2",
+                      "state_not": "off"
+                    }
+                  ],
+                  "card": {
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.office_nests_2",
+                    "group": true,
+                    "artwork": "cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true,
+                      "controls": true,
+                      "info": true,
+                      "progress": true,
+                      "artwork_border": true
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "chart_type": "line",
+              "period": "5minute",
+              "days_to_show": 30,
+              "type": "statistics-graph",
+              "entities": [
+                "sensor.total_upload",
+                "sensor.total_download"
+              ],
+              "stat_types": [
+                "max"
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Cameras",
+              "cards": [
+                {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Front Door",
+                  "entities": [
+                    {
+                      "entity": "camera.front_door"
+                    }
+                  ],
+                  "camera_image": "camera.front_door"
+                },
+                {
+                  "type": "picture-glance",
+                  "camera_view": "auto",
+                  "title": "Living Room",
+                  "entities": [
+                    {
+                      "entity": "camera.living_room_camera_2"
+                    }
+                  ],
+                  "camera_image": "camera.living_room_camera_2",
+                  "entity": "camera.living_room_camera_2"
+                },
+                {
+                  "camera_view": "auto",
+                  "type": "picture-glance",
+                  "title": "Family Room",
+                  "entities": [
+                    {
+                      "entity": "camera.family_room_camera_2"
+                    }
+                  ],
+                  "camera_image": "camera.family_room_camera_2",
+                  "entity": "camera.family_room_camera_2"
+                },
+                {
+                  "camera_view": "auto",
+                  "type": "picture-glance",
+                  "title": "Front Yard",
+                  "entities": [
+                    {
+                      "entity": "camera.front_yard_camera_2"
+                    }
+                  ],
+                  "camera_image": "camera.front_yard_camera_2",
+                  "entity": "camera.front_yard_camera_2"
+                },
+                {
+                  "camera_view": "auto",
+                  "type": "picture-glance",
+                  "title": "Backyard",
+                  "entities": [
+                    {
+                      "entity": "camera.backyard_cam"
+                    }
+                  ],
+                  "camera_image": "camera.backyard_cam",
+                  "entity": "camera.backyard_cam"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "title": "Home"
+    }
+  }
+}

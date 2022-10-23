@@ -9,3 +9,7 @@
 !scripts.yaml
 !sensors.yaml
 !templates.yaml
+
+!.storage/
+.storage/*
+!.storage/lovelace.lovelace_map
