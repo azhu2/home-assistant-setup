@@ -10,7 +10,7 @@ tts:
 
 weather:
   - platform: darksky
-    api_key: d22e9c4fef4e11cf0028dc7a42699e8d
+    api_key: !secret darksky_key
 
 frontend:
   javascript_version: latest
