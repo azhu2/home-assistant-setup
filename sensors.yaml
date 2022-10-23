@@ -1,0 +1,37 @@
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    #- 'date_time'
+    #- 'date_time_utc'
+    #- 'date_time_iso'
+    #- 'time_date'
+    #- 'time_utc'
+    - 'beat'
+- platform: statistics
+  name: "24h Upload Avg"
+  entity_id: sensor.total_upload
+  state_characteristic: mean
+  sampling_size: 100000
+  max_age: 
+    hours: 24
+- platform: statistics
+  name: "1m Upload Max"
+  entity_id: sensor.total_upload
+  state_characteristic: value_max
+  max_age:
+    minutes: 1
+- platform: statistics
+  name: "24h Download Avg"
+  entity_id: sensor.total_download
+  state_characteristic: mean
+  sampling_size: 100000
+  max_age:
+    hours: 24
+- platform: statistics
+  name: "1m Download Max"
+  entity_id: sensor.total_download
+  state_characteristic: value_max
+  sampling_size: 10
+  max_age:
+    minutes: 1

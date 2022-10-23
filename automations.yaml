@@ -1,0 +1,105 @@
+- id: '1652604926204'
+  alias: Away
+  description: ''
+  trigger:
+  - platform: device
+    device_id: fd17f08c944fe05a0c70187ae0c21cfd
+    domain: device_tracker
+    entity_id: device_tracker.pixel_4_xl
+    type: leaves
+    zone: zone.home
+    enabled: false
+  - platform: state
+    entity_id:
+    - zone.home
+    to: '0'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.away_from_home
+    metadata: {}
+  - service: scene.turn_on
+    target:
+      entity_id: scene.living_room_lights_off
+    metadata: {}
+  mode: single
+- id: '1652605093279'
+  alias: Coming Home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - zone.home
+    from: '0'
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.home
+    metadata: {}
+  mode: single
+- id: '1652605141617'
+  alias: Coming Home (Dark)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - zone.home
+    from: '0'
+  condition:
+  - condition: or
+    conditions:
+    - condition: sun
+      after: sunset
+    - condition: sun
+      before: sunrise
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.living_room_lights_on
+    metadata: {}
+  - service: scene.turn_on
+    target:
+      entity_id: scene.home
+    metadata: {}
+  mode: single
+- id: '1652605230748'
+  alias: Sunset (at home)
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  condition:
+  - condition: numeric_state
+    entity_id: zone.home
+    above: '0'
+  action:
+  - type: turn_on
+    device_id: 5fb7437dde47748c53ee761c2c24851d
+    entity_id: switch.marble_lamp
+    domain: switch
+  - type: turn_on
+    device_id: 7d92bc4a4e6f7f047a30d99110060d65
+    entity_id: switch.pendant_lamp
+    domain: switch
+  mode: single
+- id: '1664074895423'
+  alias: Morning
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: -01:00:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: c3614de33d75a997cb7c50c933a6f9c6
+    entity_id: switch.front_door_lights
+    domain: switch
+  mode: single

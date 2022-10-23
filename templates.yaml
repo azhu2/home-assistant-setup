@@ -1,0 +1,96 @@
+- sensor:
+    name: Active Cast Devices
+    state: |
+      {{ expand(integration_entities('cast')) | selectattr('state', '!=', 'off') | map(attribute='entity_id') | reject('eq', 'media_player.xbr_55x900e') | list | count }}
+    state_class: measurement
+- sensor:
+    name: Total Upload
+    state: |
+      {{ expand(integration_entities('unifi')) | selectattr('entity_id', 'match', '.*_rx(_\d+)?$') | map(attribute='state') | map('float') | sum | multiply(8) | round(2) }}
+    state_class: measurement
+    unit_of_measurement: mbps
+    icon: mdi:arrow-up-bold
+  trigger:
+    - platform: time_pattern
+      seconds: "/10"
+- sensor:
+    name: Top Upload Device
+    state: |
+      {% set data = namespace(mapped=[]) %}
+
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('.*_rx(_\d+)?$') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': float(entity.state)}] %}
+      {% endfor %}
+
+      {{ data.mapped | sort(reverse=true, attribute='value') | map(attribute='entity_id') | first | replace('sensor.', '') | replace('_rx', '') | replace('_', ' ') }}
+    state_class: measurement
+    icon: mdi:arrow-up-thick
+  trigger:
+    - platform: time_pattern
+      seconds: "/10"
+- sensor:
+    name: Top Upload
+    state: |
+      {% set data = namespace(mapped=[]) %}
+
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('.*_rx(_\d+)?$') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': float(entity.state)}] %}
+      {% endfor %}
+
+      {{ data.mapped | sort(reverse=true, attribute='value') | map(attribute='value') | first | multiply(8) | round(2) }}
+    state_class: measurement
+    unit_of_measurement: mbps
+    icon: mdi:trending-up
+  trigger:
+    - platform: time_pattern
+      seconds: "/10"
+- sensor:
+    name: Total Download
+    state: |
+      {{ expand(integration_entities('unifi')) | selectattr('entity_id', 'match', '.*_tx(_\d+)?$') | map(attribute='state') | map('float') | sum | multiply(8) | round(2) }}
+    state_class: measurement
+    unit_of_measurement: mbps
+    icon: mdi:arrow-down-bold
+  trigger:
+    - platform: time_pattern
+      seconds: "/10"
+- sensor:
+    name: Top Download Device
+    state: |
+      {% set data = namespace(mapped=[]) %}
+
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('.*_tx(_\d+)?$') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': float(entity.state)}] %}
+      {% endfor %}
+
+      {{ data.mapped | sort(reverse=true, attribute='value') | map(attribute='entity_id') | first | replace('sensor.', '') | replace('_tx', '') | replace('_', ' ') }}
+    state_class: measurement
+    icon: mdi:arrow-down-thick
+  trigger:
+    - platform: time_pattern
+      seconds: "/10"
+- sensor:
+    name: Top Download
+    state: |
+      {% set data = namespace(mapped=[]) %}
+
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('.*_tx(_\d+)?$') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': float(entity.state)}] %}
+      {% endfor %}
+
+      {{ data.mapped | sort(reverse=true, attribute='value') | map(attribute='value') | first | multiply(8) | round(2) }}
+    state_class: measurement
+    unit_of_measurement: mbps
+    icon: mdi:trending-down
+  trigger:
+    - platform: time_pattern
+      seconds: "/10"
+- sensor:
+    name: Online devices
+    state: |
+      {{ expand(integration_entities('unifi')) | selectattr('entity_id', 'match', '^device_tracker.*') | selectattr('state', 'eq', 'home') | map(attribute='entity_id') | list | count }}
+    state_class: measurement
+    icon: mdi:wifi
+  trigger:
+    - platform: time_pattern
+      seconds: "/10"

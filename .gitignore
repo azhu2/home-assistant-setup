@@ -1,0 +1,11 @@
+# Block all by default
+/*
+
+!.gitignore
+
+!configuration.yaml
+!automations.yaml
+!scenes.yaml
+!scripts.yaml
+!sensors.yaml
+!templates.yaml

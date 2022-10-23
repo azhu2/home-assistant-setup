@@ -1,0 +1,41 @@
+adguard_home_off_30_min:
+  alias: AdGuard Home off (30 min)
+  sequence:
+  - if:
+    - condition: device
+      type: is_off
+      device_id: cbd7cd247ba919dbcbf216acd2b0578c
+      entity_id: switch.adguard_protection
+      domain: switch
+    then:
+    - type: turn_on
+      device_id: cbd7cd247ba919dbcbf216acd2b0578c
+      entity_id: switch.adguard_protection
+      domain: switch
+    else:
+    - type: turn_off
+      device_id: cbd7cd247ba919dbcbf216acd2b0578c
+      entity_id: switch.adguard_protection
+      domain: switch
+    - delay:
+        hours: 0
+        minutes: 30
+        seconds: 0
+        milliseconds: 0
+    - type: turn_on
+      device_id: cbd7cd247ba919dbcbf216acd2b0578c
+      entity_id: switch.adguard_protection
+      domain: switch
+    - if:
+      - condition: device
+        type: is_off
+        device_id: cbd7cd247ba919dbcbf216acd2b0578c
+        entity_id: switch.adguard_protection
+        domain: switch
+      then:
+      - type: turn_on
+        device_id: cbd7cd247ba919dbcbf216acd2b0578c
+        entity_id: switch.adguard_protection
+        domain: switch
+  mode: parallel
+  max: 10
