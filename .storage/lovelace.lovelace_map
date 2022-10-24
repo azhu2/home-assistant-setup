@@ -1722,58 +1722,40 @@
                   "icon": "mdi:trending-down"
                 },
                 {
-                  "hours_to_show": 24,
-                  "graph": "none",
                   "type": "sensor",
                   "entity": "sensor.24h_download_avg",
                   "name": "24h avg",
-                  "icon": "mdi:clock",
-                  "detail": 1
+                  "icon": "mdi:clock"
                 },
                 {
-                  "hours_to_show": 24,
-                  "graph": "none",
                   "type": "sensor",
                   "entity": "sensor.24h_upload_avg",
                   "name": "24h avg",
-                  "icon": "mdi:clock",
-                  "detail": 1
+                  "icon": "mdi:clock"
                 },
                 {
-                  "hours_to_show": 24,
-                  "graph": "none",
                   "type": "sensor",
                   "entity": "sensor.top_download_device",
                   "name": "Top Client",
-                  "detail": 1,
                   "icon": "mdi:devices"
                 },
                 {
-                  "hours_to_show": 24,
-                  "graph": "none",
                   "type": "sensor",
                   "entity": "sensor.top_upload_device",
                   "name": "Top Client",
-                  "detail": 1,
                   "icon": "mdi:devices"
                 },
                 {
                   "type": "sensor",
                   "entity": "sensor.top_download",
-                  "name": "Rate",
-                  "graph": "line",
-                  "detail": 2
+                  "name": "Rate"
                 },
                 {
                   "type": "sensor",
                   "entity": "sensor.top_upload",
-                  "name": "Rate",
-                  "graph": "line",
-                  "detail": 2
+                  "name": "Rate"
                 },
                 {
-                  "show_name": true,
-                  "show_icon": true,
                   "type": "button",
                   "entity": "switch.adguard_protection",
                   "name": "Adguard Off (30 min)",
