@@ -6,7 +6,31 @@
 - sensor:
     name: Total Upload
     state: |
-      {{ expand(integration_entities('unifi')) | selectattr('entity_id', 'match', '.*_rx(_\d+)?$') | map(attribute='state') | map('float') | sum | multiply(8) | round(2) }}
+      {% set data = namespace(mapped=[], results=[]) %}
+      {% set map_attr = 'rx' %}
+
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('(^sensor\..*_(r|t)x(_\d+)?)|(^device_tracker\..*)') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': entity.state}] %}
+      {% endfor %}
+
+      {% for entity in data.mapped if entity.entity_id is match('^device_tracker\..*') %}
+        {% if entity.value == 'home' %}
+          {% set name = entity.entity_id.replace("device_tracker.", "") %}
+          {% set name_1 = name | regex_replace("_\d$", "") %}
+          {% set name_2 = "" %}
+          {% if name_1 != name %}
+            {% set name_2 = name | regex_findall_index("_\d$") %}
+          {% endif %}
+        
+          {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
+          {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
+          {% if rx | length > 0 and tx | length > 0 %}
+            {% set data.results = data.results + [{'name': name, 'rx': float(rx[0].value), 'tx': float(tx[0].value)}] %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {{ data.results | map(attribute = map_attr) | sum | multiply(8) | round(2) }}
     state_class: measurement
     unit_of_measurement: mbps
     icon: mdi:arrow-up-bold
@@ -16,13 +40,32 @@
 - sensor:
     name: Top Upload Device
     state: |
-      {% set data = namespace(mapped=[]) %}
+      {% set data = namespace(mapped=[], results=[]) %}
+      {% set sort_attr = 'rx' %}
+      {% set map_attr = 'name' %}
 
-      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('.*_rx(_\d+)?$') %}
-        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': float(entity.state)}] %}
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('(^sensor\..*_(r|t)x(_\d+)?)|(^device_tracker\..*)') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': entity.state}] %}
       {% endfor %}
 
-      {{ data.mapped | sort(reverse=true, attribute='value') | map(attribute='entity_id') | first | replace('sensor.', '') | replace('_rx', '') | replace('_', ' ') }}
+      {% for entity in data.mapped if entity.entity_id is match('^device_tracker\..*') %}
+        {% if entity.value == 'home' %}
+          {% set name = entity.entity_id.replace("device_tracker.", "") %}
+          {% set name_1 = name | regex_replace("_\d$", "") %}
+          {% set name_2 = "" %}
+          {% if name_1 != name %}
+            {% set name_2 = name | regex_findall_index("_\d$") %}
+          {% endif %}
+
+          {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
+          {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
+          {% if rx | length > 0 and tx | length > 0 %}
+            {% set data.results = data.results + [{'name': name, 'rx': float(rx[0].value), 'tx': float(tx[0].value)}] %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {{ data.results | sort(reverse = true, attribute = sort_attr) | map(attribute = map_attr) | first }}
     state_class: measurement
     icon: mdi:arrow-up-thick
   trigger:
@@ -31,13 +74,32 @@
 - sensor:
     name: Top Upload
     state: |
-      {% set data = namespace(mapped=[]) %}
+      {% set data = namespace(mapped=[], results=[]) %}
+      {% set sort_attr = 'rx' %}
+      {% set map_attr = 'rx' %}
 
-      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('.*_rx(_\d+)?$') %}
-        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': float(entity.state)}] %}
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('(^sensor\..*_(r|t)x(_\d+)?)|(^device_tracker\..*)') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': entity.state}] %}
       {% endfor %}
 
-      {{ data.mapped | sort(reverse=true, attribute='value') | map(attribute='value') | first | multiply(8) | round(2) }}
+      {% for entity in data.mapped if entity.entity_id is match('^device_tracker\..*') %}
+        {% if entity.value == 'home' %}
+          {% set name = entity.entity_id.replace("device_tracker.", "") %}
+          {% set name_1 = name | regex_replace("_\d$", "") %}
+          {% set name_2 = "" %}
+          {% if name_1 != name %}
+            {% set name_2 = name | regex_findall_index("_\d$") %}
+          {% endif %}
+        
+          {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
+          {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
+          {% if rx | length > 0 and tx | length > 0 %}
+            {% set data.results = data.results + [{'name': name, 'rx': float(rx[0].value), 'tx': float(tx[0].value)}] %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {{ data.results | sort(reverse = true, attribute = sort_attr) | map(attribute = map_attr) | first | multiply(8) | round (2) }}
     state_class: measurement
     unit_of_measurement: mbps
     icon: mdi:trending-up
@@ -47,7 +109,31 @@
 - sensor:
     name: Total Download
     state: |
-      {{ expand(integration_entities('unifi')) | selectattr('entity_id', 'match', '.*_tx(_\d+)?$') | map(attribute='state') | map('float') | sum | multiply(8) | round(2) }}
+      {% set data = namespace(mapped=[], results=[]) %}
+      {% set map_attr = 'tx' %}
+
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('(^sensor\..*_(r|t)x(_\d+)?)|(^device_tracker\..*)') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': entity.state}] %}
+      {% endfor %}
+
+      {% for entity in data.mapped if entity.entity_id is match('^device_tracker\..*') %}
+        {% if entity.value == 'home' %}
+          {% set name = entity.entity_id.replace("device_tracker.", "") %}
+          {% set name_1 = name | regex_replace("_\d$", "") %}
+          {% set name_2 = "" %}
+          {% if name_1 != name %}
+            {% set name_2 = name | regex_findall_index("_\d$") %}
+          {% endif %}
+        
+          {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
+          {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
+          {% if rx | length > 0 and tx | length > 0 %}
+            {% set data.results = data.results + [{'name': name, 'rx': float(rx[0].value), 'tx': float(tx[0].value)}] %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {{ data.results | map(attribute = map_attr) | sum | multiply(8) | round(2) }}
     state_class: measurement
     unit_of_measurement: mbps
     icon: mdi:arrow-down-bold
@@ -57,13 +143,32 @@
 - sensor:
     name: Top Download Device
     state: |
-      {% set data = namespace(mapped=[]) %}
+      {% set data = namespace(mapped=[], results=[]) %}
+      {% set sort_attr = 'tx' %}
+      {% set map_attr = 'name' %}
 
-      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('.*_tx(_\d+)?$') %}
-        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': float(entity.state)}] %}
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('(^sensor\..*_(r|t)x(_\d+)?)|(^device_tracker\..*)') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': entity.state}] %}
       {% endfor %}
 
-      {{ data.mapped | sort(reverse=true, attribute='value') | map(attribute='entity_id') | first | replace('sensor.', '') | replace('_tx', '') | replace('_', ' ') }}
+      {% for entity in data.mapped if entity.entity_id is match('^device_tracker\..*') %}
+        {% if entity.value == 'home' %}
+          {% set name = entity.entity_id.replace("device_tracker.", "") %}
+          {% set name_1 = name | regex_replace("_\d$", "") %}
+          {% set name_2 = "" %}
+          {% if name_1 != name %}
+            {% set name_2 = name | regex_findall_index("_\d$") %}
+          {% endif %}
+        
+          {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
+          {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
+          {% if rx | length > 0 and tx | length > 0 %}
+            {% set data.results = data.results + [{'name': name, 'rx': float(rx[0].value), 'tx': float(tx[0].value)}] %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {{ data.results | sort(reverse = true, attribute = sort_attr) | map(attribute = map_attr) | first }}
     state_class: measurement
     icon: mdi:arrow-down-thick
   trigger:
@@ -72,13 +177,32 @@
 - sensor:
     name: Top Download
     state: |
-      {% set data = namespace(mapped=[]) %}
+      {% set data = namespace(mapped=[], results=[]) %}
+      {% set sort_attr = 'tx' %}
+      {% set map_attr = 'tx' %}
 
-      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('.*_tx(_\d+)?$') %}
-        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': float(entity.state)}] %}
+      {% for entity in expand(integration_entities('unifi')) if entity.entity_id is match('(^sensor\..*_(r|t)x(_\d+)?)|(^device_tracker\..*)') %}
+        {% set data.mapped = data.mapped + [{'entity_id': entity.entity_id, 'value': entity.state}] %}
       {% endfor %}
 
-      {{ data.mapped | sort(reverse=true, attribute='value') | map(attribute='value') | first | multiply(8) | round(2) }}
+      {% for entity in data.mapped if entity.entity_id is match('^device_tracker\..*') %}
+        {% if entity.value == 'home' %}
+          {% set name = entity.entity_id.replace("device_tracker.", "") %}
+          {% set name_1 = name | regex_replace("_\d$", "") %}
+          {% set name_2 = "" %}
+          {% if name_1 != name %}
+            {% set name_2 = name | regex_findall_index("_\d$") %}
+          {% endif %}
+        
+          {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
+          {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
+          {% if rx | length > 0 and tx | length > 0 %}
+            {% set data.results = data.results + [{'name': name, 'rx': float(rx[0].value), 'tx': float(tx[0].value)}] %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {{ data.results | sort(reverse = true, attribute = sort_attr) | map(attribute = map_attr) | first | multiply(8) | round(2) }}
     state_class: measurement
     unit_of_measurement: mbps
     icon: mdi:trending-down
