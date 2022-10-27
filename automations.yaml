@@ -67,6 +67,19 @@
     target:
       entity_id: scene.home
     metadata: {}
+  - type: turn_on
+    device_id: c3614de33d75a997cb7c50c933a6f9c6
+    entity_id: switch.front_door_lights
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: c3614de33d75a997cb7c50c933a6f9c6
+    entity_id: switch.front_door_lights
+    domain: switch
   mode: single
 - id: '1652605230748'
   alias: Sunset (at home)
