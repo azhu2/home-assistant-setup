@@ -787,17 +787,36 @@
               "title": "Network",
               "cards": [
                 {
-                  "type": "sensor",
-                  "entity": "sensor.online_devices",
-                  "graph": "line",
-                  "detail": 2
+                  "type": "custom:mini-graph-card",
+                  "name": "Online Devices",
+                  "entities": [
+                    "sensor.online_devices"
+                  ],
+                  "hours_to_show": 24,
+                  "points_per_hour": 1,
+                  "aggregate_func": "max",
+                  "group_by": "hour",
+                  "decimals": 0,
+                  "font_size": 80,
+                  "show": {
+                    "labels": false
+                  }
                 },
                 {
-                  "type": "sensor",
-                  "entity": "sensor.adguard_dns_queries_blocked_ratio",
+                  "type": "custom:mini-graph-card",
                   "name": "DNS queries blocked",
-                  "graph": "line",
-                  "detail": 2
+                  "entities": [
+                    "sensor.adguard_dns_queries_blocked_ratio"
+                  ],
+                  "hours_to_show": 24,
+                  "points_per_hour": 6,
+                  "aggregate_func": "avg",
+                  "group_by": "hour",
+                  "font_size": 80,
+                  "show": {
+                    "labels": false,
+                    "points": false
+                  }
                 },
                 {
                   "type": "custom:mini-graph-card",
@@ -833,33 +852,25 @@
                   "type": "sensor",
                   "entity": "sensor.top_download_device",
                   "name": "Top Client",
-                  "detail": 1,
                   "icon": "mdi:devices"
                 },
                 {
                   "type": "sensor",
                   "entity": "sensor.top_upload_device",
                   "name": "Top Client",
-                  "detail": 1,
                   "icon": "mdi:devices"
                 },
                 {
                   "type": "sensor",
                   "entity": "sensor.top_download",
-                  "name": "Rate",
-                  "graph": "line",
-                  "detail": 2
+                  "name": "Rate"
                 },
                 {
                   "type": "sensor",
                   "entity": "sensor.top_upload",
-                  "name": "Rate",
-                  "graph": "line",
-                  "detail": 2
+                  "name": "Rate"
                 },
                 {
-                  "show_name": true,
-                  "show_icon": true,
                   "type": "button",
                   "entity": "switch.adguard_protection",
                   "name": "Adguard Off (30 min)",
@@ -1681,17 +1692,36 @@
               "title": "Network",
               "cards": [
                 {
-                  "type": "sensor",
-                  "entity": "sensor.online_devices",
-                  "graph": "line",
-                  "detail": 2
+                  "type": "custom:mini-graph-card",
+                  "name": "Online Devices",
+                  "entities": [
+                    "sensor.online_devices"
+                  ],
+                  "hours_to_show": 24,
+                  "points_per_hour": 1,
+                  "aggregate_func": "max",
+                  "group_by": "hour",
+                  "decimals": 0,
+                  "font_size": 80,
+                  "show": {
+                    "labels": false
+                  }
                 },
                 {
-                  "type": "sensor",
-                  "entity": "sensor.adguard_dns_queries_blocked_ratio",
+                  "type": "custom:mini-graph-card",
                   "name": "DNS queries blocked",
-                  "graph": "line",
-                  "detail": 2
+                  "entities": [
+                    "sensor.adguard_dns_queries_blocked_ratio"
+                  ],
+                  "hours_to_show": 24,
+                  "points_per_hour": 6,
+                  "aggregate_func": "avg",
+                  "group_by": "hour",
+                  "font_size": 80,
+                  "show": {
+                    "labels": false,
+                    "points": false
+                  }
                 },
                 {
                   "type": "custom:mini-graph-card",
