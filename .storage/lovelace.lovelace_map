@@ -800,128 +800,36 @@
                   "detail": 2
                 },
                 {
-                  "type": "sensor",
-                  "entity": "sensor.1m_download_max",
+                  "type": "custom:mini-graph-card",
                   "name": "Download",
-                  "icon": "mdi:trending-down"
+                  "icon": "mdi:trending-down",
+                  "entities": [
+                    "sensor.1m_download_max"
+                  ],
+                  "hours_to_show": 24,
+                  "points_per_hour": 6,
+                  "aggregate_func": "max",
+                  "font_size": 80,
+                  "show": {
+                    "labels": false
+                  }
                 },
                 {
-                  "type": "sensor",
-                  "entity": "sensor.1m_upload_max",
+                  "type": "custom:mini-graph-card",
                   "name": "Upload",
-                  "icon": "mdi:trending-down"
-                },
-                {
-                  "type": "custom:plotly-graph",
-                  "graph": "line",
+                  "icon": "mdi:trending-up",
                   "entities": [
-                    {
-                      "entity": "sensor.1m_download_max",
-                      "statistic": "max",
-                      "period": "5minute",
-                      "fill": "tozeroy",
-                      "line": {
-                        "color": "c983e4",
-                        "width": 1.5
-                      },
-                      "hovertemplate": "%{x|%H:%m} - %{y} mbps\n<extra></extra>\n"
-                    }
+                    "sensor.1m_upload_max"
                   ],
                   "hours_to_show": 24,
-                  "refresh_interval": 60,
-                  "no_theme": true,
-                  "config": {
-                    "scrollZoom": false,
-                    "displayModeBar": false
-                  },
-                  "layout": {
-                    "height": 100,
-                    "margin": {
-                      "l": 0,
-                      "r": 0,
-                      "b": 0,
-                      "t": 0
-                    },
-                    "xaxis": {
-                      "fixedrange": true
-                    },
-                    "yaxis": {
-                      "title": null,
-                      "ticklabelposition": "inside",
-                      "tickfont": {
-                        "size": 8
-                      },
-                      "fixedrange": true,
-                      "zeroline": false
-                    },
-                    "hovermode": "x",
-                    "hoverlabel": {
-                      "font": {
-                        "size": 10,
-                        "color": "white"
-                      },
-                      "bgcolor": "c983e488",
-                      "bordercolor": "c983e4"
-                    }
+                  "points_per_hour": 6,
+                  "aggregate_func": "max",
+                  "font_size": 80,
+                  "show": {
+                    "labels": false
                   }
                 },
                 {
-                  "type": "custom:plotly-graph",
-                  "graph": "line",
-                  "entities": [
-                    {
-                      "entity": "sensor.1m_upload_max",
-                      "statistic": "max",
-                      "period": "5minute",
-                      "fill": "tozeroy",
-                      "line": {
-                        "color": "c983e4",
-                        "width": 1.5
-                      },
-                      "hovertemplate": "%{x|%H:%m} - %{y} mbps\n<extra></extra>\n"
-                    }
-                  ],
-                  "hours_to_show": 24,
-                  "refresh_interval": 60,
-                  "no_theme": true,
-                  "config": {
-                    "scrollZoom": false,
-                    "displayModeBar": false
-                  },
-                  "layout": {
-                    "height": 100,
-                    "margin": {
-                      "l": 0,
-                      "r": 0,
-                      "b": 0,
-                      "t": 0
-                    },
-                    "xaxis": {
-                      "fixedrange": true
-                    },
-                    "yaxis": {
-                      "title": null,
-                      "ticklabelposition": "inside",
-                      "tickfont": {
-                        "size": 8
-                      },
-                      "fixedrange": true,
-                      "zeroline": false
-                    },
-                    "hovermode": "x",
-                    "hoverlabel": {
-                      "font": {
-                        "size": 10,
-                        "color": "white"
-                      },
-                      "bgcolor": "c983e488",
-                      "bordercolor": "c983e4"
-                    }
-                  }
-                },
-                {
-                  "hours_to_show": 24,
-                  "graph": "none",
                   "type": "sensor",
                   "entity": "sensor.top_download_device",
                   "name": "Top Client",
@@ -929,8 +837,6 @@
                   "icon": "mdi:devices"
                 },
                 {
-                  "hours_to_show": 24,
-                  "graph": "none",
                   "type": "sensor",
                   "entity": "sensor.top_upload_device",
                   "name": "Top Client",
@@ -1788,123 +1694,33 @@
                   "detail": 2
                 },
                 {
-                  "type": "sensor",
-                  "entity": "sensor.1m_download_max",
+                  "type": "custom:mini-graph-card",
                   "name": "Download",
-                  "icon": "mdi:trending-up"
-                },
-                {
-                  "type": "sensor",
-                  "entity": "sensor.1m_upload_max",
-                  "name": "Upload",
-                  "icon": "mdi:trending-up"
-                },
-                {
-                  "type": "custom:plotly-graph",
-                  "graph": "line",
+                  "icon": "mdi:trending-down",
                   "entities": [
-                    {
-                      "entity": "sensor.1m_download_max",
-                      "statistic": "max",
-                      "period": "5minute",
-                      "fill": "tozeroy",
-                      "line": {
-                        "color": "c983e4",
-                        "width": 1.5
-                      },
-                      "hovertemplate": "%{x|%H:%m} - %{y} mbps\n<extra></extra>\n"
-                    }
+                    "sensor.1m_download_max"
                   ],
                   "hours_to_show": 24,
-                  "refresh_interval": 60,
-                  "no_theme": true,
-                  "config": {
-                    "scrollZoom": false,
-                    "displayModeBar": false
-                  },
-                  "layout": {
-                    "height": 100,
-                    "margin": {
-                      "l": 0,
-                      "r": 0,
-                      "b": 0,
-                      "t": 0
-                    },
-                    "xaxis": {
-                      "fixedrange": true
-                    },
-                    "yaxis": {
-                      "title": null,
-                      "ticklabelposition": "inside",
-                      "tickfont": {
-                        "size": 8
-                      },
-                      "fixedrange": true,
-                      "zeroline": false
-                    },
-                    "hovermode": "x",
-                    "hoverlabel": {
-                      "font": {
-                        "size": 10,
-                        "color": "white"
-                      },
-                      "bgcolor": "c983e488",
-                      "bordercolor": "c983e4"
-                    }
+                  "points_per_hour": 6,
+                  "aggregate_func": "max",
+                  "font_size": 80,
+                  "show": {
+                    "labels": false
                   }
                 },
                 {
-                  "type": "custom:plotly-graph",
-                  "graph": "line",
+                  "type": "custom:mini-graph-card",
+                  "name": "Upload",
+                  "icon": "mdi:trending-up",
                   "entities": [
-                    {
-                      "entity": "sensor.1m_upload_max",
-                      "statistic": "max",
-                      "period": "5minute",
-                      "fill": "tozeroy",
-                      "line": {
-                        "color": "c983e4",
-                        "width": 1.5
-                      },
-                      "hovertemplate": "%{x|%H:%m} - %{y} mbps\n<extra></extra>\n"
-                    }
+                    "sensor.1m_upload_max"
                   ],
                   "hours_to_show": 24,
-                  "refresh_interval": 60,
-                  "no_theme": true,
-                  "config": {
-                    "scrollZoom": false,
-                    "displayModeBar": false
-                  },
-                  "layout": {
-                    "height": 100,
-                    "margin": {
-                      "l": 0,
-                      "r": 0,
-                      "b": 0,
-                      "t": 0
-                    },
-                    "xaxis": {
-                      "fixedrange": true
-                    },
-                    "yaxis": {
-                      "title": null,
-                      "ticklabelposition": "inside",
-                      "tickfont": {
-                        "size": 8
-                      },
-                      "fixedrange": true,
-                      "zeroline": false
-                    },
-                    "hovermode": "x",
-                    "hoverlabel": {
-                      "font": {
-                        "size": 10,
-                        "color": "white"
-                      },
-                      "bgcolor": "c983e488",
-                      "bordercolor": "c983e4"
-                    }
+                  "points_per_hour": 6,
+                  "aggregate_func": "max",
+                  "font_size": 80,
+                  "show": {
+                    "labels": false
                   }
                 },
                 {
