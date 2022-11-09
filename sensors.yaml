@@ -19,6 +19,7 @@
   name: "1m Upload Max"
   entity_id: sensor.total_upload
   state_characteristic: value_max
+  sampling_size: 10
   max_age:
     minutes: 1
 - platform: statistics
