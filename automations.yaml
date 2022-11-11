@@ -2,13 +2,6 @@
   alias: Away
   description: ''
   trigger:
-  - platform: device
-    device_id: fd17f08c944fe05a0c70187ae0c21cfd
-    domain: device_tracker
-    entity_id: device_tracker.pixel_4_xl
-    type: leaves
-    zone: zone.home
-    enabled: false
   - platform: state
     entity_id:
     - zone.home
@@ -52,12 +45,9 @@
     - zone.home
     from: '0'
   condition:
-  - condition: or
-    conditions:
-    - condition: sun
-      after: sunset
-    - condition: sun
-      before: sunrise
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
   action:
   - service: scene.turn_on
     target:
@@ -106,9 +96,10 @@
   alias: Morning
   description: ''
   trigger:
-  - platform: sun
-    event: sunrise
-    offset: -01:00:00
+  - platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    above: -6
   condition: []
   action:
   - type: turn_off
