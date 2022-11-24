@@ -605,6 +605,30 @@
             },
             {
               "type": "grid",
+              "title": "Outside",
+              "square": false,
+              "cards": [
+                {
+                  "type": "button",
+                  "entity": "switch.front_door_lights",
+                  "name": "Front Door"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.outdoor_lights",
+                  "name": "Backyard"
+                },
+                {
+                  "type": "button",
+                  "entity": "cover.garage_door",
+                  "tap_action": {
+                    "action": "toggle"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
               "title": "Living Room",
               "square": false,
               "cards": [
@@ -673,30 +697,6 @@
                 {
                   "type": "button",
                   "entity": "light.master_light"
-                }
-              ]
-            },
-            {
-              "type": "grid",
-              "title": "Outside",
-              "square": false,
-              "cards": [
-                {
-                  "type": "button",
-                  "entity": "switch.front_door_lights",
-                  "name": "Front Door"
-                },
-                {
-                  "type": "button",
-                  "entity": "switch.outdoor_lights",
-                  "name": "Backyard"
-                },
-                {
-                  "type": "button",
-                  "entity": "cover.garage_door",
-                  "tap_action": {
-                    "action": "toggle"
-                  }
                 }
               ]
             },
