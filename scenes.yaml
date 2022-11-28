@@ -2,7 +2,7 @@
   name: Lights On
   entities:
     switch.marble_lamp:
-      icon: mdi:floor-lamp-torchiere
+      icon: phu:floor-shade
       friendly_name: Marble Lamp
       state: 'on'
     switch.marble_lamp_led:
@@ -10,7 +10,7 @@
       friendly_name: Marble Lamp LED
       state: 'on'
     switch.pendant_lamp:
-      icon: mdi:floor-lamp
+      icon: mdi:desk-lamp
       friendly_name: Pendant Lamp
       state: 'on'
     switch.pendant_lamp_led:
@@ -20,11 +20,11 @@
     light.family_room_lights:
       supported_color_modes:
       - brightness
-      icon: mdi:ceiling-light-multiple
-      friendly_name: Family Room Lights
-      supported_features: 32
       color_mode: brightness
       brightness: 255
+      icon: bha:ceiling-downlight
+      friendly_name: Family Room Lights
+      supported_features: 32
       state: 'on'
     switch.family_room_lights_led:
       icon: mdi:led-on
@@ -33,57 +33,33 @@
     light.family_room_chandelier:
       supported_color_modes:
       - brightness
-      icon: mdi:ceiling-light-outline
-      friendly_name: Family Room Chandelier
-      supported_features: 32
       color_mode: brightness
       brightness: 158
+      icon: hue:pendant-long
+      friendly_name: Family Room Chandelier
+      supported_features: 32
       state: 'on'
     switch.family_room_chandelier_led:
       icon: mdi:led-on
       friendly_name: Family Room Chandelier LED
       state: 'on'
     switch.kitchen_chandelier:
-      icon: mdi:chandelier
+      icon: hue:pendant-being
       friendly_name: Kitchen Chandelier
-      state: 'on'
+      state: 'off'
     switch.kitchen_chandelier_led:
       icon: mdi:led-on
       friendly_name: Kitchen Chandelier LED
       state: 'on'
     switch.kitchen_lights:
-      icon: mdi:ceiling-light-multiple
+      icon: bha:ceiling-downlight
       friendly_name: Kitchen Lights
       state: 'on'
     switch.kitchen_lights_led:
       icon: mdi:led-on
       friendly_name: Kitchen Lights LED
       state: 'on'
-  metadata:
-    switch.pendant_lamp:
-      entity_only: false
-    switch.pendant_lamp_led:
-      entity_only: false
-    switch.marble_lamp:
-      entity_only: false
-    switch.marble_lamp_led:
-      entity_only: false
-    light.family_room_chandelier:
-      entity_only: false
-    switch.family_room_chandelier_led:
-      entity_only: false
-    switch.kitchen_lights:
-      entity_only: false
-    switch.kitchen_lights_led:
-      entity_only: false
-    light.family_room_lights:
-      entity_only: false
-    switch.family_room_lights_led:
-      entity_only: false
-    switch.kitchen_chandelier:
-      entity_only: false
-    switch.kitchen_chandelier_led:
-      entity_only: false
+  metadata: {}
 - id: '1652605402369'
   name: Lights Off
   entities:
