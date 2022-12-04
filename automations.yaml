@@ -83,14 +83,10 @@
     entity_id: zone.home
     above: '0'
   action:
-  - type: turn_on
-    device_id: 5fb7437dde47748c53ee761c2c24851d
-    entity_id: switch.marble_lamp
-    domain: switch
-  - type: turn_on
-    device_id: 7d92bc4a4e6f7f047a30d99110060d65
-    entity_id: switch.pendant_lamp
-    domain: switch
+  - service: scene.turn_on
+    target:
+      entity_id: scene.living_room_lights_on
+    metadata: {}
   mode: single
 - id: '1664074895423'
   alias: Morning

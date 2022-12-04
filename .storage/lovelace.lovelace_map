@@ -658,13 +658,17 @@
                 {
                   "type": "button",
                   "entity": "light.family_room_lights",
-                  "name": "Can Lights",
-                  "icon": ""
+                  "name": "Can Lights"
                 },
                 {
                   "type": "button",
                   "entity": "light.family_room_chandelier",
                   "name": "Chandelier"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.cat_den",
+                  "name": "Cat Den"
                 }
               ]
             },
@@ -1533,13 +1537,17 @@
                 {
                   "type": "light",
                   "entity": "light.family_room_lights",
-                  "name": "Can Lights",
-                  "icon": ""
+                  "name": "Can Lights"
                 },
                 {
                   "type": "light",
                   "entity": "light.family_room_chandelier",
                   "name": "Chandelier"
+                },
+                {
+                  "type": "button",
+                  "entity": "switch.cat_den",
+                  "name": "Cat Den"
                 }
               ]
             },

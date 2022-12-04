@@ -43,21 +43,17 @@
       icon: mdi:led-on
       friendly_name: Family Room Chandelier LED
       state: 'on'
-    switch.kitchen_chandelier:
-      icon: hue:pendant-being
-      friendly_name: Kitchen Chandelier
-      state: 'off'
     switch.kitchen_chandelier_led:
       icon: mdi:led-on
       friendly_name: Kitchen Chandelier LED
       state: 'on'
-    switch.kitchen_lights:
-      icon: bha:ceiling-downlight
-      friendly_name: Kitchen Lights
-      state: 'on'
     switch.kitchen_lights_led:
       icon: mdi:led-on
       friendly_name: Kitchen Lights LED
+      state: 'on'
+    switch.cat_den:
+      friendly_name: Cat Den
+      icon: mdi:string-lights
       state: 'on'
   metadata: {}
 - id: '1652605402369'
@@ -93,8 +89,6 @@
       icon: hue:pendant-long
       friendly_name: Family Room Chandelier
       supported_features: 32
-      color_mode: brightness
-      brightness: 158
       state: 'off'
     switch.family_room_chandelier_led:
       icon: mdi:led-on
@@ -106,8 +100,6 @@
       icon: bha:ceiling-downlight
       friendly_name: Family Room Lights
       supported_features: 32
-      color_mode: brightness
-      brightness: 255
       state: 'off'
     switch.family_room_lights_led:
       icon: mdi:led-on
@@ -131,6 +123,10 @@
       icon: mdi:chandelier
       friendly_name: Master Light
       supported_features: 32
+      state: 'off'
+    switch.cat_den:
+      friendly_name: Cat Den
+      icon: mdi:string-lights
       state: 'off'
   metadata: {}
 - id: '1652605481559'
