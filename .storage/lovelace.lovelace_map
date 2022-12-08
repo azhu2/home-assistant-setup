@@ -710,15 +710,14 @@
               "cards": [
                 {
                   "type": "horizontal-stack",
-                  "square": false,
                   "cards": [
                     {
-                      "type": "button",
+                      "type": "tile",
                       "entity": "switch.lawn_schedule",
                       "name": "Lawn"
                     },
                     {
-                      "type": "button",
+                      "type": "tile",
                       "entity": "switch.roses_schedule_2",
                       "name": "Roses"
                     }
@@ -726,7 +725,6 @@
                 },
                 {
                   "type": "horizontal-stack",
-                  "square": false,
                   "cards": [
                     {
                       "type": "button",
@@ -887,7 +885,7 @@
                   "name": "Rate"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.adguard_protection",
                   "name": "Adguard Off (30 min)",
                   "tap_action": {
@@ -1522,21 +1520,22 @@
               "type": "grid",
               "title": "Living Room",
               "square": false,
+              "columns": 2,
               "cards": [
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.marble_lamp"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.pendant_lamp"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.christmas_tree"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.air_purifier"
                 }
               ]
@@ -1545,19 +1544,30 @@
               "type": "grid",
               "title": "Family Room",
               "square": false,
+              "columns": 2,
               "cards": [
                 {
-                  "type": "light",
+                  "type": "tile",
                   "entity": "light.family_room_lights",
-                  "name": "Can Lights"
+                  "name": "Can Lights",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
                 },
                 {
-                  "type": "light",
+                  "type": "tile",
                   "entity": "light.family_room_chandelier",
-                  "name": "Chandelier"
+                  "name": "Chandelier",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.cat_den",
                   "name": "Cat Den"
                 }
@@ -1567,14 +1577,15 @@
               "type": "grid",
               "title": "Kitchen",
               "square": false,
+              "columns": 2,
               "cards": [
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.kitchen_lights",
                   "name": "Can Lights"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.kitchen_chandelier",
                   "name": "Chandelier"
                 }
@@ -1584,10 +1595,16 @@
               "type": "grid",
               "title": "Master Bedroom",
               "square": false,
+              "columns": 2,
               "cards": [
                 {
-                  "type": "light",
-                  "entity": "light.master_light"
+                  "type": "tile",
+                  "entity": "light.master_light",
+                  "features": [
+                    {
+                      "type": "light-brightness"
+                    }
+                  ]
                 }
               ]
             },
@@ -1598,27 +1615,26 @@
               "type": "grid",
               "title": "Outside",
               "square": false,
+              "columns": 2,
               "cards": [
                 {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.front_door_lights",
                   "name": "Front Door"
                 },
                 {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.outdoor_lights",
                   "name": "Backyard"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "cover.garage_door",
-                  "tap_action": {
-                    "action": "toggle"
-                  }
+                  "features": [
+                    {
+                      "type": "cover-open-close"
+                    }
+                  ]
                 }
               ]
             },
@@ -1628,15 +1644,14 @@
               "cards": [
                 {
                   "type": "horizontal-stack",
-                  "square": false,
                   "cards": [
                     {
-                      "type": "button",
+                      "type": "tile",
                       "entity": "switch.lawn_schedule",
                       "name": "Lawn"
                     },
                     {
-                      "type": "button",
+                      "type": "tile",
                       "entity": "switch.roses_schedule_2",
                       "name": "Roses"
                     }
@@ -1644,7 +1659,6 @@
                 },
                 {
                   "type": "horizontal-stack",
-                  "square": false,
                   "cards": [
                     {
                       "type": "button",
@@ -1687,27 +1701,27 @@
                   "camera_image": "camera.garage_cam_high"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "camera.front_door",
                   "name": "Front Door"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "camera.front_yard_camera_2",
                   "name": "Front Yard"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "camera.backyard_cam",
                   "name": "Backyard"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "camera.living_room_camera_2",
                   "name": "Living Room"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "camera.family_room_camera_2",
                   "name": "Family Room"
                 }
@@ -1807,7 +1821,7 @@
                   "name": "Rate"
                 },
                 {
-                  "type": "button",
+                  "type": "tile",
                   "entity": "switch.adguard_protection",
                   "name": "Adguard Off (30 min)",
                   "tap_action": {
