@@ -756,7 +756,19 @@
               "type": "grid",
               "title": "Cameras",
               "square": false,
+              "columns": 2,
               "cards": [
+                {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Garage",
+                  "entities": [
+                    {
+                      "entity": "camera.garage_cam_high"
+                    }
+                  ],
+                  "camera_image": "camera.garage_cam_high"
+                },
                 {
                   "type": "button",
                   "entity": "camera.front_door",
@@ -1663,6 +1675,17 @@
               "title": "Cameras",
               "square": false,
               "cards": [
+                {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Garage",
+                  "entities": [
+                    {
+                      "entity": "camera.garage_cam_high"
+                    }
+                  ],
+                  "camera_image": "camera.garage_cam_high"
+                },
                 {
                   "type": "button",
                   "entity": "camera.front_door",
