@@ -888,6 +888,7 @@
                   "type": "tile",
                   "entity": "switch.adguard_protection",
                   "name": "Adguard Off (30 min)",
+                  "color": "primary",
                   "tap_action": {
                     "action": "call-service",
                     "service": "script.adguard_home_off_30_min"
@@ -1703,27 +1704,32 @@
                 {
                   "type": "tile",
                   "entity": "camera.front_door",
-                  "name": "Front Door"
+                  "name": "Front Door",
+                  "color": "primary"
                 },
                 {
                   "type": "tile",
                   "entity": "camera.front_yard_camera_2",
-                  "name": "Front Yard"
+                  "name": "Front Yard",
+                  "color": "primary"
                 },
                 {
                   "type": "tile",
                   "entity": "camera.backyard_cam",
-                  "name": "Backyard"
+                  "name": "Backyard",
+                  "color": "primary"
                 },
                 {
                   "type": "tile",
                   "entity": "camera.living_room_camera_2",
-                  "name": "Living Room"
+                  "name": "Living Room",
+                  "color": "primary"
                 },
                 {
                   "type": "tile",
                   "entity": "camera.family_room_camera_2",
-                  "name": "Family Room"
+                  "name": "Family Room",
+                  "color": "primary"
                 }
               ]
             },
@@ -1824,6 +1830,7 @@
                   "type": "tile",
                   "entity": "switch.adguard_protection",
                   "name": "Adguard Off (30 min)",
+                  "color": "primary",
                   "tap_action": {
                     "action": "call-service",
                     "service": "script.adguard_home_off_30_min"
