@@ -818,18 +818,16 @@
                 },
                 {
                   "type": "custom:mini-graph-card",
-                  "name": "DNS queries blocked",
+                  "name": "UDR Memory",
                   "entities": [
-                    "sensor.adguard_dns_queries_blocked_ratio"
+                    "sensor.udr_memory_utilization"
                   ],
                   "hours_to_show": 24,
                   "points_per_hour": 6,
-                  "aggregate_func": "avg",
-                  "group_by": "hour",
+                  "aggregate_func": "max",
                   "font_size": 80,
                   "show": {
-                    "labels": false,
-                    "points": false
+                    "labels": false
                   }
                 },
                 {
@@ -873,16 +871,6 @@
                   "entity": "sensor.top_upload_device",
                   "name": "Top Client",
                   "icon": "mdi:devices"
-                },
-                {
-                  "type": "sensor",
-                  "entity": "sensor.top_download",
-                  "name": "Rate"
-                },
-                {
-                  "type": "sensor",
-                  "entity": "sensor.top_upload",
-                  "name": "Rate"
                 },
                 {
                   "type": "tile",
@@ -1749,7 +1737,6 @@
                     "sensor.online_devices"
                   ],
                   "hours_to_show": 24,
-                  "points_per_hour": 1,
                   "aggregate_func": "max",
                   "group_by": "hour",
                   "decimals": 0,
@@ -1760,18 +1747,16 @@
                 },
                 {
                   "type": "custom:mini-graph-card",
-                  "name": "DNS queries blocked",
+                  "name": "UDR Memory",
                   "entities": [
-                    "sensor.adguard_dns_queries_blocked_ratio"
+                    "sensor.udr_memory_utilization"
                   ],
                   "hours_to_show": 24,
                   "points_per_hour": 6,
-                  "aggregate_func": "avg",
-                  "group_by": "hour",
+                  "aggregate_func": "max",
                   "font_size": 80,
                   "show": {
-                    "labels": false,
-                    "points": false
+                    "labels": false
                   }
                 },
                 {
@@ -1782,7 +1767,7 @@
                     "sensor.1m_download_max"
                   ],
                   "hours_to_show": 24,
-                  "points_per_hour": 6,
+                  "points_per_hour": 12,
                   "aggregate_func": "max",
                   "font_size": 80,
                   "show": {
@@ -1797,7 +1782,7 @@
                     "sensor.1m_upload_max"
                   ],
                   "hours_to_show": 24,
-                  "points_per_hour": 6,
+                  "points_per_hour": 12,
                   "aggregate_func": "max",
                   "font_size": 80,
                   "show": {
@@ -1807,13 +1792,13 @@
                 {
                   "type": "sensor",
                   "entity": "sensor.top_download_device",
-                  "name": "Top Client",
+                  "name": "Top Download",
                   "icon": "mdi:devices"
                 },
                 {
                   "type": "sensor",
                   "entity": "sensor.top_upload_device",
-                  "name": "Top Client",
+                  "name": "Top Upload",
                   "icon": "mdi:devices"
                 },
                 {
@@ -1825,12 +1810,23 @@
                   "type": "sensor",
                   "entity": "sensor.top_upload",
                   "name": "Rate"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.udr_storage_utilization",
+                  "name": "UDR Storage"
                 },
                 {
-                  "type": "tile",
-                  "entity": "switch.adguard_protection",
-                  "name": "Adguard Off (30 min)",
-                  "color": "primary",
+                  "entity": "sensor.adguard_dns_queries_blocked_ratio",
+                  "name": "AdGuard Blocked"
+                },
+                {
+                  "entity": "switch.adguard_filtering",
+                  "name": "AdGuard Blocking",
                   "tap_action": {
                     "action": "call-service",
                     "service": "script.adguard_home_off_30_min"
