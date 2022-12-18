@@ -103,3 +103,25 @@
     entity_id: switch.front_door_lights
     domain: switch
   mode: single
+- id: '1671321699663'
+  alias: Christmas Lighting
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  condition:
+  - condition: template
+    value_template: '{{ now().month == 12 }}
+
+      '
+  action:
+  - type: turn_on
+    device_id: 81b684f54340316ad98fe83ed190ea38
+    entity_id: switch.christmas_tree
+    domain: switch
+  - type: turn_on
+    device_id: c3614de33d75a997cb7c50c933a6f9c6
+    entity_id: switch.front_door_lights
+    domain: switch
+  mode: single
