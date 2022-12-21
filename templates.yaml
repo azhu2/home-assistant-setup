@@ -1,10 +1,10 @@
 - sensor:
-    name: Active Cast Devices
+  - name: Active Cast Devices
     state: |
       {{ expand(integration_entities('cast')) | selectattr('state', '!=', 'off') | map(attribute='entity_id') | reject('eq', 'media_player.xbr_55x900e') | list | count }}
     state_class: measurement
 - sensor:
-    name: Total Upload
+  - name: Total Upload
     state: |
       {% set data = namespace(mapped=[], results=[]) %}
       {% set map_attr = 'rx' %}
@@ -38,7 +38,7 @@
     - platform: time_pattern
       seconds: "/10"
 - sensor:
-    name: Top Upload Device
+  - name: Top Upload Device
     state: |
       {% set data = namespace(mapped=[], results=[]) %}
       {% set sort_attr = 'rx' %}
@@ -72,7 +72,7 @@
     - platform: time_pattern
       seconds: "/10"
 - sensor:
-    name: Top Upload
+  - name: Top Upload
     state: |
       {% set data = namespace(mapped=[], results=[]) %}
       {% set sort_attr = 'rx' %}
@@ -107,7 +107,7 @@
     - platform: time_pattern
       seconds: "/10"
 - sensor:
-    name: Total Download
+  - name: Total Download
     state: |
       {% set data = namespace(mapped=[], results=[]) %}
       {% set map_attr = 'tx' %}
@@ -141,7 +141,7 @@
     - platform: time_pattern
       seconds: "/10"
 - sensor:
-    name: Top Download Device
+  - name: Top Download Device
     state: |
       {% set data = namespace(mapped=[], results=[]) %}
       {% set sort_attr = 'tx' %}
@@ -175,7 +175,7 @@
     - platform: time_pattern
       seconds: "/10"
 - sensor:
-    name: Top Download
+  - name: Top Download
     state: |
       {% set data = namespace(mapped=[], results=[]) %}
       {% set sort_attr = 'tx' %}
@@ -210,7 +210,7 @@
     - platform: time_pattern
       seconds: "/10"
 - sensor:
-    name: Online devices
+  - name: Online devices
     state: |
       {{ expand(integration_entities('unifi')) | selectattr('entity_id', 'match', '^device_tracker.*') | selectattr('state', 'eq', 'home') | map(attribute='entity_id') | list | count }}
     state_class: measurement
@@ -218,3 +218,12 @@
   trigger:
     - platform: time_pattern
       seconds: "/10"
+- binary_sensor:
+  - name: Garage Cam Recording State
+    state: >
+      {{ states('select.garage_cam_recording_mode') == 'Detections' }}
+- binary_sensor:
+  - name: Family Room Cam Recording State
+    state: >
+      {{ states('select.family_room_cam_recording_mode') == 'Detections' }}
+
