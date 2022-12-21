@@ -24,4 +24,5 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 sensor: !include sensors.yaml
+switch: !include switches.yaml
 template: !include templates.yaml

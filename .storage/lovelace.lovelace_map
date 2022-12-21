@@ -760,23 +760,23 @@
                   "type": "picture-glance",
                   "camera_view": "live",
                   "title": "Garage",
+                  "camera_image": "camera.garage_cam_high",
                   "entities": [
                     {
-                      "entity": "camera.garage_cam_high"
+                      "entity": "switch.garage_cam_recording"
                     }
-                  ],
-                  "camera_image": "camera.garage_cam_high"
+                  ]
                 },
                 {
                   "type": "picture-glance",
                   "camera_view": "live",
-                  "title": "Garage",
+                  "title": "Family Room",
+                  "camera_image": "camera.family_room_cam_high",
                   "entities": [
                     {
-                      "entity": "camera.family_room_cam_high"
+                      "entity": "switch.family_room_cam_recording"
                     }
-                  ],
-                  "camera_image": "camera.family_room_cam_high"
+                  ]
                 },
                 {
                   "type": "button",
@@ -1680,31 +1680,32 @@
               ]
             },
             {
+              "square": false,
+              "columns": 2,
               "type": "grid",
               "title": "Cameras",
-              "square": false,
               "cards": [
                 {
                   "type": "picture-glance",
                   "camera_view": "live",
                   "title": "Garage",
+                  "camera_image": "camera.garage_cam_high",
                   "entities": [
                     {
-                      "entity": "camera.garage_cam_high"
+                      "entity": "switch.garage_cam_recording"
                     }
-                  ],
-                  "camera_image": "camera.garage_cam_high"
+                  ]
                 },
                 {
                   "type": "picture-glance",
                   "camera_view": "live",
                   "title": "Family Room",
+                  "camera_image": "camera.family_room_cam_high",
                   "entities": [
                     {
-                      "entity": "camera.family_room_cam_high"
+                      "entity": "switch.family_room_cam_recording"
                     }
-                  ],
-                  "camera_image": "camera.family_room_cam_high"
+                  ]
                 },
                 {
                   "type": "tile",
