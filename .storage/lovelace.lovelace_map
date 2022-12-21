@@ -768,6 +768,17 @@
                   "camera_image": "camera.garage_cam_high"
                 },
                 {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Garage",
+                  "entities": [
+                    {
+                      "entity": "camera.family_room_cam_high"
+                    }
+                  ],
+                  "camera_image": "camera.family_room_cam_high"
+                },
+                {
                   "type": "button",
                   "entity": "camera.front_door",
                   "name": "Front Door"
@@ -786,11 +797,6 @@
                   "type": "button",
                   "entity": "camera.living_room_camera_2",
                   "name": "Living Room"
-                },
-                {
-                  "type": "button",
-                  "entity": "camera.family_room_camera_2",
-                  "name": "Family Room"
                 }
               ]
             },
@@ -1690,6 +1696,17 @@
                   "camera_image": "camera.garage_cam_high"
                 },
                 {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Family Room",
+                  "entities": [
+                    {
+                      "entity": "camera.family_room_cam_high"
+                    }
+                  ],
+                  "camera_image": "camera.family_room_cam_high"
+                },
+                {
                   "type": "tile",
                   "entity": "camera.front_door",
                   "name": "Front Door",
@@ -1711,12 +1728,6 @@
                   "type": "tile",
                   "entity": "camera.living_room_camera_2",
                   "name": "Living Room",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "camera.family_room_camera_2",
-                  "name": "Family Room",
                   "color": "primary"
                 }
               ]

@@ -39,3 +39,21 @@ adguard_home_off_30_min:
         domain: switch
   mode: parallel
   max: 10
+indoor_cameras_off:
+  alias: Indoor Cameras Off
+  sequence:
+  - service: select.select_option
+    data:
+      option: Never
+    target:
+      entity_id: select.family_room_cam_recording_mode
+  mode: restart
+indoor_cameras_on:
+  alias: Indoor Cameras On
+  sequence:
+  - service: select.select_option
+    data:
+      option: Detections
+    target:
+      entity_id: select.family_room_cam_recording_mode
+  mode: restart
