@@ -779,6 +779,17 @@
                   ]
                 },
                 {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Bedroom",
+                  "camera_image": "camera.bedroom_cam_high",
+                  "entities": [
+                    {
+                      "entity": "switch.bedroom_cam_recording"
+                    }
+                  ]
+                },
+                {
                   "type": "button",
                   "entity": "camera.front_door",
                   "name": "Front Door"
@@ -1704,6 +1715,17 @@
                   "entities": [
                     {
                       "entity": "switch.family_room_cam_recording"
+                    }
+                  ]
+                },
+                {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Bedroom",
+                  "camera_image": "camera.bedroom_cam_high",
+                  "entities": [
+                    {
+                      "entity": "switch.bedroom_cam_recording"
                     }
                   ]
                 },

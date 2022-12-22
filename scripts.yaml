@@ -42,18 +42,20 @@ adguard_home_off_30_min:
 indoor_cameras_off:
   alias: Indoor Cameras Off
   sequence:
-  - service: select.select_option
-    data:
-      option: Never
+  - service: switch.turn_off
+    data: {}
     target:
-      entity_id: select.family_room_cam_recording_mode
+      entity_id:
+      - switch.family_room_cam_recording
+      - switch.bedroom_cam_recording
   mode: restart
 indoor_cameras_on:
   alias: Indoor Cameras On
   sequence:
-  - service: select.select_option
-    data:
-      option: Detections
+  - service: switch.turn_on
+    data: {}
     target:
-      entity_id: select.family_room_cam_recording_mode
+      entity_id:
+      - switch.family_room_cam_recording
+      - switch.bedroom_cam_recording
   mode: restart
