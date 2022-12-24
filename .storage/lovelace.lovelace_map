@@ -864,8 +864,38 @@
               "square": false,
               "columns": 2,
               "type": "grid",
-              "title": "Network",
+              "title": "System",
               "cards": [
+                {
+                  "type": "custom:mini-graph-card",
+                  "name": "HA CPU",
+                  "entities": [
+                    "sensor.processor_use"
+                  ],
+                  "hours_to_show": 24,
+                  "points_per_hour": 6,
+                  "aggregate_func": "max",
+                  "group_by": "hour",
+                  "decimals": 0,
+                  "font_size": 80,
+                  "show": {
+                    "labels": false
+                  }
+                },
+                {
+                  "type": "custom:mini-graph-card",
+                  "name": "HA Memory",
+                  "entities": [
+                    "sensor.memory_use_percent"
+                  ],
+                  "hours_to_show": 24,
+                  "points_per_hour": 6,
+                  "aggregate_func": "max",
+                  "font_size": 80,
+                  "show": {
+                    "labels": false
+                  }
+                },
                 {
                   "type": "custom:mini-graph-card",
                   "name": "Online Devices",
