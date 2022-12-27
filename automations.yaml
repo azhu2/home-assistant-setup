@@ -22,6 +22,10 @@
     metadata: {}
   - service: script.indoor_cameras_on
     data: {}
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.thermostat_eco_mode
   mode: single
 - id: '1652605093279'
   alias: Coming Home
@@ -39,6 +43,10 @@
     metadata: {}
   - service: script.indoor_cameras_off
     data: {}
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.thermostat_eco_mode
   mode: single
 - id: '1652605141617'
   alias: Coming Home (Dark)

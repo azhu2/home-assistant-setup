@@ -35,6 +35,59 @@
               "secondary_info_attribute": "wind_speed"
             },
             {
+              "type": "custom:simple-thermostat",
+              "entity": "climate.thermostat",
+              "control": {
+                "hvac": {
+                  "heat_cool": false
+                },
+                "fan": {
+                  "off": {
+                    "icon": "mdi:fan-off"
+                  },
+                  "on": {
+                    "icon": "mdi:fan"
+                  }
+                }
+              },
+              "fallback": "--",
+              "header": {
+                "icon": "mdi:thermometer-lines",
+                "toggle": {
+                  "entity": "switch.thermostat_eco_mode",
+                  "name": "Eco"
+                }
+              },
+              "layout": {
+                "step": "row",
+                "mode": {
+                  "icons": true,
+                  "names": false,
+                  "headings": false
+                }
+              },
+              "hide": {
+                "temperature": true
+              },
+              "label": {
+                "state": "Status"
+              },
+              "sensors": [
+                {
+                  "entity": "sensor.thermostat_temperature",
+                  "name": "Overall"
+                },
+                {
+                  "entity": "sensor.master_bedroom_temperature_sensor_temperature",
+                  "name": "Master Bedroom"
+                },
+                {
+                  "entity": "sensor.thermostat_humidity",
+                  "name": "Humidity"
+                }
+              ]
+            },
+            {
               "type": "vertical-stack",
               "cards": [
                 {
