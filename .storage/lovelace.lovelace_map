@@ -27,12 +27,38 @@
               ]
             },
             {
+              "type": "weather-forecast",
               "show_current": true,
               "show_forecast": false,
-              "type": "weather-forecast",
               "name": "Napa",
               "entity": "weather.dark_sky",
               "secondary_info_attribute": "wind_speed"
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "switch.trash_day",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "tile",
+                    "entity": "select.trash_day",
+                    "color": "primary",
+                    "icon_tap_action": {
+                      "action": "call-service",
+                      "service": "switch.toggle",
+                      "target": {
+                        "entity_id": "switch.trash_day"
+                      }
+                    }
+                  }
+                }
+              ]
             },
             {
               "type": "conditional",

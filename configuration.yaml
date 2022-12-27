@@ -20,8 +20,9 @@ frontend:
     - /hacsfiles/hass-bha-icons/hass-bha-icons.js
 
 automation: !include automations.yaml
-script: !include scripts.yaml
+input_text: !include input_texts.yaml
 scene: !include scenes.yaml
+script: !include scripts.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 template: !include templates.yaml

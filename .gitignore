@@ -5,6 +5,7 @@
 
 !configuration.yaml
 !automations.yaml
+!input_texts.yaml
 !scenes.yaml
 !scripts.yaml
 !sensors.yaml

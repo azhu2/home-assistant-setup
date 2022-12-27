@@ -63,3 +63,20 @@
           entity_id: select.bedroom_cam_recording_mode
         data:
           option: Never
+    trash_day:
+      friendly_name: Trash Day
+      value_template: >
+        {{ is_state('select.trash_day', 'Trash Day') }}
+      icon_template: mdi:delete
+      turn_on:
+        service: select.select_option
+        target:
+          entity_id: select.trash_day
+        data:
+          option: Trash Day
+      turn_off:
+        service: select.select_option
+        target:
+          entity_id: select.trash_day
+        data:
+          option: Trash Day Cleared
