@@ -901,9 +901,9 @@
                   "hours_to_show": 24,
                   "points_per_hour": 6,
                   "aggregate_func": "max",
-                  "group_by": "hour",
                   "decimals": 0,
                   "font_size": 80,
+                  "smoothing": false,
                   "show": {
                     "labels": false
                   }
@@ -918,6 +918,7 @@
                   "points_per_hour": 6,
                   "aggregate_func": "max",
                   "font_size": 80,
+                  "smoothing": false,
                   "show": {
                     "labels": false
                   }
@@ -933,6 +934,7 @@
                   "group_by": "hour",
                   "decimals": 0,
                   "font_size": 80,
+                  "smoothing": false,
                   "show": {
                     "labels": false
                   }
@@ -947,6 +949,7 @@
                   "points_per_hour": 6,
                   "aggregate_func": "max",
                   "font_size": 80,
+                  "smoothing": false,
                   "show": {
                     "labels": false
                   }
@@ -962,6 +965,7 @@
                   "points_per_hour": 12,
                   "aggregate_func": "max",
                   "font_size": 80,
+                  "smoothing": false,
                   "show": {
                     "labels": false
                   }
@@ -977,6 +981,7 @@
                   "points_per_hour": 12,
                   "aggregate_func": "max",
                   "font_size": 80,
+                  "smoothing": false,
                   "show": {
                     "labels": false
                   }
