@@ -6,7 +6,7 @@
     "config": {
       "views": [
         {
-          "theme": "Backend-selected",
+          "theme": "Caule Light Purple",
           "title": "Desktop",
           "path": "main",
           "subview": false,
@@ -51,6 +51,7 @@
                 }
               },
               "fallback": "--",
+              "step_size": 1,
               "header": {
                 "icon": "mdi:thermometer-lines",
                 "toggle": {
@@ -1082,6 +1083,47 @@
                   }
                 }
               ]
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Climate",
+          "icon": "",
+          "type": "panel",
+          "badges": [],
+          "cards": [
+            {
+              "type": "custom:mini-graph-card",
+              "name": "Temperature",
+              "entities": [
+                {
+                  "entity": "climate.thermostat",
+                  "attribute": "temperature",
+                  "name": "Target"
+                },
+                {
+                  "entity": "climate.thermostat",
+                  "attribute": "current_temperature",
+                  "name": "Overall"
+                },
+                {
+                  "entity": "sensor.master_bedroom_temperature_sensor_temperature",
+                  "name": "Master"
+                }
+              ],
+              "hours_to_show": 24,
+              "points_per_hour": 12,
+              "aggregate_func": "avg",
+              "font_size": 120,
+              "font_size_header": 20,
+              "line_width": 0.5,
+              "smoothing": false,
+              "min_bound_range": 10,
+              "show": {
+                "labels": false,
+                "fill": false
+              }
             }
           ]
         }
