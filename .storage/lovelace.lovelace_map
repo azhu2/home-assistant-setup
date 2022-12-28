@@ -946,35 +946,34 @@
               "title": "System",
               "cards": [
                 {
-                  "type": "custom:mini-graph-card",
+                  "type": "gauge",
                   "name": "HA CPU",
-                  "entities": [
-                    "sensor.processor_use"
-                  ],
-                  "hours_to_show": 24,
-                  "points_per_hour": 6,
-                  "aggregate_func": "max",
-                  "decimals": 0,
-                  "font_size": 80,
-                  "smoothing": false,
-                  "show": {
-                    "labels": false
-                  }
+                  "entity": "sensor.processor_use",
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": "var(--accent-color)"
+                    },
+                    {
+                      "from": 90,
+                      "color": "var(--primary-color)"
+                    }
+                  ]
                 },
                 {
-                  "type": "custom:mini-graph-card",
+                  "type": "gauge",
                   "name": "HA Memory",
-                  "entities": [
-                    "sensor.memory_use_percent"
-                  ],
-                  "hours_to_show": 24,
-                  "points_per_hour": 6,
-                  "aggregate_func": "max",
-                  "font_size": 80,
-                  "smoothing": false,
-                  "show": {
-                    "labels": false
-                  }
+                  "entity": "sensor.memory_use_percent",
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": "var(--accent-color)"
+                    },
+                    {
+                      "from": 90,
+                      "color": "var(--primary-color)"
+                    }
+                  ]
                 },
                 {
                   "type": "custom:mini-graph-card",
@@ -989,23 +988,24 @@
                   "font_size": 80,
                   "smoothing": false,
                   "show": {
-                    "labels": false
+                    "labels": false,
+                    "graph": "bar"
                   }
                 },
                 {
-                  "type": "custom:mini-graph-card",
+                  "type": "gauge",
                   "name": "UDR Memory",
-                  "entities": [
-                    "sensor.udr_memory_utilization"
-                  ],
-                  "hours_to_show": 24,
-                  "points_per_hour": 6,
-                  "aggregate_func": "max",
-                  "font_size": 80,
-                  "smoothing": false,
-                  "show": {
-                    "labels": false
-                  }
+                  "entity": "sensor.udr_memory_utilization",
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": "var(--accent-color)"
+                    },
+                    {
+                      "from": 90,
+                      "color": "var(--primary-color)"
+                    }
+                  ]
                 },
                 {
                   "type": "custom:mini-graph-card",
@@ -1015,10 +1015,9 @@
                     "sensor.1m_download_max"
                   ],
                   "hours_to_show": 24,
-                  "points_per_hour": 12,
+                  "points_per_hour": 6,
                   "aggregate_func": "max",
                   "font_size": 80,
-                  "smoothing": false,
                   "show": {
                     "labels": false
                   }
@@ -1031,7 +1030,7 @@
                     "sensor.1m_upload_max"
                   ],
                   "hours_to_show": 24,
-                  "points_per_hour": 12,
+                  "points_per_hour": 6,
                   "aggregate_func": "max",
                   "font_size": 80,
                   "smoothing": false,
