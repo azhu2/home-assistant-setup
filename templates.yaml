@@ -248,3 +248,11 @@
       event: start
     - platform: event
       event_type: event_template_reloaded
+- binary_sensor:
+    - name: Thermostat Heating
+      state: |
+        {{ is_state_attr('climate.thermostat', 'hvac_action', 'heating') }}
+- binary_sensor:
+    - name: Thermostat Cooling
+      state: |
+        {{ is_state_attr('climate.thermostat', 'hvac_action', 'cooling') }}

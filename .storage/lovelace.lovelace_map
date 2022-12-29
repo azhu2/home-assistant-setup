@@ -52,6 +52,7 @@
               },
               "fallback": "--",
               "step_size": 1,
+              "decimals": 0,
               "header": {
                 "icon": "mdi:thermometer-lines",
                 "toggle": {
@@ -1099,19 +1100,56 @@
               "entities": [
                 {
                   "entity": "climate.thermostat",
-                  "attribute": "temperature",
-                  "name": "Target"
+                  "attribute": "current_temperature",
+                  "name": "Overall",
+                  "show_fill": false
                 },
                 {
                   "entity": "climate.thermostat",
-                  "attribute": "current_temperature",
-                  "name": "Overall"
+                  "attribute": "temperature",
+                  "name": "Target",
+                  "show_fill": false
                 },
                 {
                   "entity": "sensor.master_bedroom_temperature_sensor_temperature",
-                  "name": "Master"
+                  "name": "Master",
+                  "show_fill": false
+                },
+                {
+                  "entity": "switch.thermostat_eco_mode",
+                  "name": "Eco Mode",
+                  "color": "green",
+                  "y_axis": "secondary",
+                  "show_points": false,
+                  "show_legend": false,
+                  "show_line": false,
+                  "show_fill": true,
+                  "aggregate_func": "last"
+                },
+                {
+                  "entity": "binary_sensor.thermostat_heating",
+                  "name": "Heat On",
+                  "color": "red",
+                  "y_axis": "secondary",
+                  "show_points": false,
+                  "show_legend": false,
+                  "show_line": false,
+                  "show_fill": true,
+                  "aggregate_func": "last"
+                },
+                {
+                  "entity": "binary_sensor.thermostat_cooling",
+                  "name": "A/C On",
+                  "color": "blue",
+                  "y_axis": "secondary",
+                  "show_points": false,
+                  "show_legend": false,
+                  "show_line": false,
+                  "show_fill": true,
+                  "aggregate_func": "last"
                 }
               ],
+              "cache": false,
               "hours_to_show": 24,
               "points_per_hour": 12,
               "aggregate_func": "avg",
@@ -1120,10 +1158,22 @@
               "line_width": 0.5,
               "smoothing": false,
               "min_bound_range": 10,
+              "lower_bound_secondary": 0.01,
+              "upper_bound_secondary": 1,
               "show": {
                 "labels": false,
-                "fill": false
-              }
+                "labels_secondary": false
+              },
+              "state_map": [
+                {
+                  "value": "off",
+                  "label": "off"
+                },
+                {
+                  "value": "on",
+                  "label": "on"
+                }
+              ]
             }
           ]
         }
