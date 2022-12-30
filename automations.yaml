@@ -69,6 +69,11 @@
     target:
       entity_id: scene.home
     metadata: {}
+  - condition: device
+    type: is_off
+    device_id: c3614de33d75a997cb7c50c933a6f9c6
+    entity_id: switch.front_door_lights
+    domain: switch
   - type: turn_on
     device_id: c3614de33d75a997cb7c50c933a6f9c6
     entity_id: switch.front_door_lights
