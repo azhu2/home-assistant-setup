@@ -222,7 +222,7 @@
     - name: Trash Day
       state: |
         {% if trigger.platform == 'time' %}
-          {% if trigger.now.weekday() == 4 %}
+          {% if trigger.now.isoweekday() == 4 %}
             Trash Day
           {% else %}
             Not Trash Day
