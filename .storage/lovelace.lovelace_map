@@ -1072,6 +1072,10 @@
                   "name": "UDR Storage"
                 },
                 {
+                  "entity": "sensor.disk_use_percent",
+                  "name": "HA Storage"
+                },
+                {
                   "entity": "sensor.adguard_dns_queries_blocked_ratio",
                   "name": "AdGuard Blocked"
                 },
@@ -1102,18 +1106,21 @@
                   "entity": "climate.thermostat",
                   "attribute": "current_temperature",
                   "name": "Overall",
-                  "show_fill": false
+                  "show_fill": false,
+                  "color": "var(--primary-color)"
                 },
                 {
                   "entity": "climate.thermostat",
                   "attribute": "temperature",
                   "name": "Target",
-                  "show_fill": false
+                  "show_fill": false,
+                  "color": "var(--accent-color)"
                 },
                 {
                   "entity": "sensor.master_bedroom_temperature_sensor_temperature",
                   "name": "Master",
-                  "show_fill": false
+                  "show_fill": false,
+                  "color": "var(--primary-text-color)"
                 },
                 {
                   "entity": "switch.thermostat_eco_mode",
@@ -1161,8 +1168,9 @@
               "lower_bound_secondary": 0.01,
               "upper_bound_secondary": 1,
               "show": {
-                "labels": false,
-                "labels_secondary": false
+                "labels": true,
+                "labels_secondary": false,
+                "points": false
               },
               "state_map": [
                 {
