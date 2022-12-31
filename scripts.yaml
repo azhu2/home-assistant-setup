@@ -37,8 +37,7 @@ adguard_home_off_30_min:
         device_id: cbd7cd247ba919dbcbf216acd2b0578c
         entity_id: switch.adguard_protection
         domain: switch
-  mode: parallel
-  max: 10
+  mode: restart
 indoor_cameras_off:
   alias: Indoor Cameras Off
   sequence:

@@ -76,8 +76,8 @@
               },
               "sensors": [
                 {
-                  "entity": "sensor.thermostat_temperature",
-                  "name": "Overall"
+                  "entity": "sensor.nest_temperature_sensor_family_room_temperature",
+                  "name": "Family Room"
                 },
                 {
                   "entity": "sensor.master_bedroom_temperature_sensor_temperature",
@@ -1117,10 +1117,16 @@
                   "color": "var(--accent-color)"
                 },
                 {
+                  "entity": "sensor.nest_temperature_sensor_family_room_temperature",
+                  "name": "Family Room",
+                  "show_fill": false,
+                  "color": "#77F"
+                },
+                {
                   "entity": "sensor.master_bedroom_temperature_sensor_temperature",
                   "name": "Master",
                   "show_fill": false,
-                  "color": "var(--primary-text-color)"
+                  "color": "#8C8"
                 },
                 {
                   "entity": "switch.thermostat_eco_mode",
