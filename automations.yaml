@@ -129,9 +129,7 @@
     offset: 0
   condition:
   - condition: template
-    value_template: '{{ now().month == 12 }}
-
-      '
+    value_template: '{{ now().month == 12 }}'
   action:
   - type: turn_on
     device_id: 81b684f54340316ad98fe83ed190ea38
@@ -141,4 +139,29 @@
     device_id: c3614de33d75a997cb7c50c933a6f9c6
     entity_id: switch.front_door_lights
     domain: switch
+  mode: single
+- id: '1673047879540'
+  alias: Trash Day
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:00:00'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ now().isoweekday() == 4 }}'
+      sequence:
+      - service: select.select_option
+        data:
+          option: Trash Day
+        target:
+          entity_id: select.trash_day
+    default:
+    - service: select.select_option
+      data:
+        option: Not Trash Day
+      target:
+        entity_id: select.trash_day
   mode: single
