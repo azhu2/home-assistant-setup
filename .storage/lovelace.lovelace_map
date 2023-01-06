@@ -1081,10 +1081,6 @@
                   "name": "UDR Storage"
                 },
                 {
-                  "entity": "sensor.disk_use_percent",
-                  "name": "HA Storage"
-                },
-                {
                   "entity": "sensor.adguard_dns_queries_blocked_ratio",
                   "name": "AdGuard Blocked"
                 },
@@ -1102,7 +1098,7 @@
         },
         {
           "theme": "Backend-selected",
-          "title": "Climate",
+          "title": "HVAC",
           "icon": "",
           "type": "panel",
           "badges": [],
@@ -1185,7 +1181,7 @@
               "show": {
                 "labels": true,
                 "labels_secondary": false,
-                "points": false
+                "points": "hover"
               },
               "state_map": [
                 {
