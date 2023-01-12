@@ -5,17 +5,9 @@
       icon: phu:floor-shade
       friendly_name: Marble Lamp
       state: 'on'
-    switch.marble_lamp_led:
-      icon: mdi:led-on
-      friendly_name: Marble Lamp LED
-      state: 'on'
     switch.pendant_lamp:
       icon: mdi:desk-lamp
       friendly_name: Pendant Lamp
-      state: 'on'
-    switch.pendant_lamp_led:
-      icon: mdi:led-on
-      friendly_name: Pendant Lamp LED
       state: 'on'
     light.family_room_lights:
       supported_color_modes:
@@ -26,10 +18,6 @@
       friendly_name: Family Room Lights
       supported_features: 32
       state: 'on'
-    switch.family_room_lights_led:
-      icon: mdi:led-on
-      friendly_name: Family Room Lights LED
-      state: 'on'
     light.family_room_chandelier:
       supported_color_modes:
       - brightness
@@ -39,21 +27,13 @@
       friendly_name: Family Room Chandelier
       supported_features: 32
       state: 'on'
-    switch.family_room_chandelier_led:
-      icon: mdi:led-on
-      friendly_name: Family Room Chandelier LED
-      state: 'on'
-    switch.kitchen_chandelier_led:
-      icon: mdi:led-on
-      friendly_name: Kitchen Chandelier LED
-      state: 'on'
-    switch.kitchen_lights_led:
-      icon: mdi:led-on
-      friendly_name: Kitchen Lights LED
-      state: 'on'
     switch.cat_den:
-      friendly_name: Cat Den
       icon: mdi:string-lights
+      friendly_name: Cat Den
+      state: 'on'
+    switch.kitchen_lights:
+      icon: bha:ceiling-downlight
+      friendly_name: Kitchen Lights
       state: 'on'
   metadata: {}
 - id: '1652605402369'
@@ -63,26 +43,14 @@
       icon: phu:floor-shade
       friendly_name: Marble Lamp
       state: 'off'
-    switch.marble_lamp_led:
-      icon: mdi:led-on
-      friendly_name: Marble Lamp LED
-      state: 'on'
     switch.pendant_lamp:
       icon: mdi:desk-lamp
       friendly_name: Pendant Lamp
       state: 'off'
-    switch.pendant_lamp_led:
-      icon: mdi:led-on
-      friendly_name: Pendant Lamp LED
-      state: 'on'
     switch.kitchen_lights:
       icon: bha:ceiling-downlight
       friendly_name: Kitchen Lights
       state: 'off'
-    switch.kitchen_lights_led:
-      icon: mdi:led-on
-      friendly_name: Kitchen Lights LED
-      state: 'on'
     light.family_room_chandelier:
       supported_color_modes:
       - brightness
@@ -90,10 +58,6 @@
       friendly_name: Family Room Chandelier
       supported_features: 32
       state: 'off'
-    switch.family_room_chandelier_led:
-      icon: mdi:led-on
-      friendly_name: Family Room Chandelier LED
-      state: 'on'
     light.family_room_lights:
       supported_color_modes:
       - brightness
@@ -101,18 +65,10 @@
       friendly_name: Family Room Lights
       supported_features: 32
       state: 'off'
-    switch.family_room_lights_led:
-      icon: mdi:led-on
-      friendly_name: Family Room Lights LED
-      state: 'on'
     switch.kitchen_chandelier:
       icon: hue:pendant-being
       friendly_name: Kitchen Chandelier
       state: 'off'
-    switch.kitchen_chandelier_led:
-      icon: mdi:led-on
-      friendly_name: Kitchen Chandelier LED
-      state: 'on'
     switch.christmas_tree:
       icon: mdi:pine-tree
       friendly_name: Christmas Tree
@@ -135,17 +91,9 @@
     switch.air_purifier:
       friendly_name: Air Purifier
       state: 'on'
-    switch.air_purifier_led:
-      icon: mdi:led-on
-      friendly_name: Air Purifier LED
-      state: 'on'
 - id: '1652605497610'
   name: Home
   entities:
     switch.air_purifier:
       friendly_name: Air Purifier
       state: 'off'
-    switch.air_purifier_led:
-      icon: mdi:led-on
-      friendly_name: Air Purifier LED
-      state: 'on'
