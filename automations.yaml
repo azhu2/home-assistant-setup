@@ -165,3 +165,17 @@
       target:
         entity_id: select.trash_day
   mode: single
+- id: '1673503803986'
+  alias: Reload Broken Thermostat Entry
+  trigger:
+  - platform: time_pattern
+    minutes: /5
+  condition:
+  - condition: template
+    value_template: |
+      {{ as_timedelta(states('sensor.last_thermostat_sensor_update')) > as_timedelta('0:30:00') }}
+  action:
+  - service: homeassistant.reload_config_entry
+    data:
+      entry_id: 4dfd032ff9de3f1d14a4fee8de4a0d43
+  mode: single
