@@ -958,8 +958,8 @@
               "cards": [
                 {
                   "type": "gauge",
-                  "name": "HA CPU",
-                  "entity": "sensor.processor_use",
+                  "name": "NAS CPU",
+                  "entity": "sensor.synology_nas_cpu_utilization_total",
                   "segments": [
                     {
                       "from": 0,
@@ -973,8 +973,53 @@
                 },
                 {
                   "type": "gauge",
-                  "name": "HA Memory",
-                  "entity": "sensor.memory_use_percent",
+                  "name": "NAS RAM",
+                  "entity": "sensor.synology_nas_memory_usage_real",
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": "var(--accent-color)"
+                    },
+                    {
+                      "from": 90,
+                      "color": "var(--primary-color)"
+                    }
+                  ]
+                },
+                {
+                  "type": "gauge",
+                  "name": "UDR RAM",
+                  "entity": "sensor.udr_memory_utilization",
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": "var(--accent-color)"
+                    },
+                    {
+                      "from": 90,
+                      "color": "var(--primary-color)"
+                    }
+                  ]
+                },
+                {
+                  "type": "gauge",
+                  "name": "NAS Storage",
+                  "entity": "sensor.synology_nas_volume_1_volume_used",
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": "var(--accent-color)"
+                    },
+                    {
+                      "from": 90,
+                      "color": "var(--primary-color)"
+                    }
+                  ]
+                },
+                {
+                  "type": "gauge",
+                  "name": "UDR Storage",
+                  "entity": "sensor.udr_storage_utilization",
                   "segments": [
                     {
                       "from": 0,
@@ -1002,21 +1047,6 @@
                     "labels": false,
                     "graph": "bar"
                   }
-                },
-                {
-                  "type": "gauge",
-                  "name": "UDR Memory",
-                  "entity": "sensor.udr_memory_utilization",
-                  "segments": [
-                    {
-                      "from": 0,
-                      "color": "var(--accent-color)"
-                    },
-                    {
-                      "from": 90,
-                      "color": "var(--primary-color)"
-                    }
-                  ]
                 },
                 {
                   "type": "custom:mini-graph-card",
@@ -1076,10 +1106,6 @@
             {
               "type": "entities",
               "entities": [
-                {
-                  "entity": "sensor.udr_storage_utilization",
-                  "name": "UDR Storage"
-                },
                 {
                   "entity": "sensor.adguard_dns_queries_blocked_ratio",
                   "name": "AdGuard Blocked"
