@@ -169,11 +169,13 @@
   alias: Reload Broken Thermostat Entry
   trigger:
   - platform: time_pattern
-    minutes: /5
+    minutes: /30
   condition:
   - condition: template
-    value_template: |
-      {{ as_timedelta(states('sensor.last_thermostat_sensor_update')) > as_timedelta('0:30:00') }}
+    value_template: '{{ as_timedelta(states(''sensor.last_thermostat_sensor_update''))
+      > as_timedelta(''0:30:00'') }}
+
+      '
   action:
   - service: homeassistant.reload_config_entry
     data:

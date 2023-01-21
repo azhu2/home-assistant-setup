@@ -1107,11 +1107,11 @@
               "type": "entities",
               "entities": [
                 {
-                  "entity": "sensor.adguard_dns_queries_blocked_ratio",
+                  "entity": "sensor.adguard_home_dns_queries_blocked_ratio",
                   "name": "AdGuard Blocked"
                 },
                 {
-                  "entity": "switch.adguard_filtering",
+                  "entity": "switch.adguard_home_protection",
                   "name": "AdGuard Blocking",
                   "tap_action": {
                     "action": "call-service",

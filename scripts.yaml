@@ -4,18 +4,18 @@ adguard_home_off_30_min:
   - if:
     - condition: device
       type: is_off
-      device_id: cbd7cd247ba919dbcbf216acd2b0578c
-      entity_id: switch.adguard_protection
+      device_id: b77df9625cceb5b2df16176d357ba7e2
+      entity_id: switch.adguard_home_protection
       domain: switch
     then:
     - type: turn_on
-      device_id: cbd7cd247ba919dbcbf216acd2b0578c
-      entity_id: switch.adguard_protection
+      device_id: b77df9625cceb5b2df16176d357ba7e2
+      entity_id: switch.adguard_home_protection
       domain: switch
     else:
     - type: turn_off
-      device_id: cbd7cd247ba919dbcbf216acd2b0578c
-      entity_id: switch.adguard_protection
+      device_id: b77df9625cceb5b2df16176d357ba7e2
+      entity_id: switch.adguard_home_protection
       domain: switch
     - delay:
         hours: 0
@@ -23,19 +23,19 @@ adguard_home_off_30_min:
         seconds: 0
         milliseconds: 0
     - type: turn_on
-      device_id: cbd7cd247ba919dbcbf216acd2b0578c
-      entity_id: switch.adguard_protection
+      device_id: b77df9625cceb5b2df16176d357ba7e2
+      entity_id: switch.adguard_home_protection
       domain: switch
     - if:
       - condition: device
         type: is_off
-        device_id: cbd7cd247ba919dbcbf216acd2b0578c
-        entity_id: switch.adguard_protection
+        device_id: b77df9625cceb5b2df16176d357ba7e2
+        entity_id: switch.adguard_home_protection
         domain: switch
       then:
       - type: turn_on
-        device_id: cbd7cd247ba919dbcbf216acd2b0578c
-        entity_id: switch.adguard_protection
+        device_id: b77df9625cceb5b2df16176d357ba7e2
+        entity_id: switch.adguard_home_protection
         domain: switch
   mode: restart
 indoor_cameras_off:
