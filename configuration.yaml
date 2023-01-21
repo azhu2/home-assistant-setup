@@ -21,6 +21,7 @@ frontend:
 
 automation: !include automations.yaml
 input_text: !include input_texts.yaml
+media_player: !include media_players.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml

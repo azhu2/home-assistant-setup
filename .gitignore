@@ -6,6 +6,7 @@
 !configuration.yaml
 !automations.yaml
 !input_texts.yaml
+!media_players.yaml
 !scenes.yaml
 !scripts.yaml
 !sensors.yaml
