@@ -166,7 +166,7 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "switch.air_purifier"
+                  "entity": "switch.fan"
                 }
               ]
             },
