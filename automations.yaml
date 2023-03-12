@@ -57,9 +57,10 @@
     - zone.home
     from: '0'
   condition:
-  - condition: state
+  - condition: numeric_state
     entity_id: sun.sun
-    state: below_horizon
+    attribute: elevation
+    below: 4
   action:
   - service: scene.turn_on
     target:
@@ -92,9 +93,10 @@
   alias: Sunset (at home)
   description: ''
   trigger:
-  - platform: sun
-    event: sunset
-    offset: 0
+  - platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 4
   condition:
   - condition: numeric_state
     entity_id: zone.home
@@ -179,5 +181,14 @@
   action:
   - service: homeassistant.reload_config_entry
     data:
-      entry_id: 4dfd032ff9de3f1d14a4fee8de4a0d43
+      entry_id: 49992082efd965afbeb5a9e0f18908fa
   mode: single
+- id: '1678660146641'
+  alias: Sync Kitchen Lights
+  description: ''
+  use_blueprint:
+    path: aderusha/link_multiple_devices.yaml
+    input:
+      linked_entities:
+      - switch.kitchen_lights
+      - switch.under_cabinet_lighting
