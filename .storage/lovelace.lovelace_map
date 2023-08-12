@@ -27,14 +27,6 @@
               ]
             },
             {
-              "type": "weather-forecast",
-              "show_current": true,
-              "show_forecast": false,
-              "name": "Napa",
-              "entity": "weather.dark_sky",
-              "secondary_info_attribute": "wind_speed"
-            },
-            {
               "type": "custom:simple-thermostat",
               "entity": "climate.thermostat",
               "control": {
