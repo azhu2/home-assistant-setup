@@ -8,7 +8,6 @@ tts:
   - platform: google_translate
 
 frontend:
-  javascript_version: latest
   themes: !include_dir_merge_named themes
   extra_module_url:
     - /hacsfiles/hass-hue-icons/hass-hue-icons.js
