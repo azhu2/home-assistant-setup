@@ -264,5 +264,4 @@
           {% endif %}
         {% endfor %}
         {{ utcnow() - data.oldest }}
-      state_class: measurement
       icon: mdi:thermometer-off
