@@ -2,98 +2,53 @@
   name: Lights On
   entities:
     switch.marble_lamp:
-      icon: phu:floor-shade
-      friendly_name: Marble Lamp
       state: 'on'
     switch.pendant_lamp:
-      icon: mdi:desk-lamp
-      friendly_name: Pendant Lamp
       state: 'on'
     light.family_room_lights:
-      supported_color_modes:
-      - brightness
       color_mode: brightness
       brightness: 255
-      icon: bha:ceiling-downlight
-      friendly_name: Family Room Lights
-      supported_features: 32
       state: 'on'
     light.family_room_chandelier:
-      supported_color_modes:
-      - brightness
       color_mode: brightness
       brightness: 158
-      icon: hue:pendant-long
-      friendly_name: Family Room Chandelier
-      supported_features: 32
       state: 'on'
     switch.cat_den:
-      icon: mdi:string-lights
-      friendly_name: Cat Den
       state: 'on'
     switch.kitchen_lights:
-      icon: bha:ceiling-downlight
-      friendly_name: Kitchen Lights
+      state: 'on'
+    light.standing_lamp:
       state: 'on'
   metadata: {}
 - id: '1652605402369'
   name: Lights Off
   entities:
     switch.marble_lamp:
-      icon: phu:floor-shade
-      friendly_name: Marble Lamp
       state: 'off'
     switch.pendant_lamp:
-      icon: mdi:desk-lamp
-      friendly_name: Pendant Lamp
       state: 'off'
     switch.kitchen_lights:
-      icon: bha:ceiling-downlight
-      friendly_name: Kitchen Lights
       state: 'off'
     light.family_room_chandelier:
-      supported_color_modes:
-      - brightness
-      icon: hue:pendant-long
-      friendly_name: Family Room Chandelier
-      supported_features: 32
       state: 'off'
     light.family_room_lights:
-      supported_color_modes:
-      - brightness
-      icon: bha:ceiling-downlight
-      friendly_name: Family Room Lights
-      supported_features: 32
       state: 'off'
     switch.kitchen_chandelier:
-      icon: hue:pendant-being
-      friendly_name: Kitchen Chandelier
-      state: 'off'
-    switch.christmas_tree:
-      icon: mdi:pine-tree
-      friendly_name: Christmas Tree
       state: 'off'
     light.master_light:
-      supported_color_modes:
-      - brightness
-      icon: mdi:chandelier
-      friendly_name: Master Light
-      supported_features: 32
       state: 'off'
     switch.cat_den:
-      friendly_name: Cat Den
-      icon: mdi:string-lights
+      state: 'off'
+    light.standing_lamp:
       state: 'off'
   metadata: {}
 - id: '1652605481559'
   name: Away
   entities:
-    switch.air_purifier:
-      friendly_name: Air Purifier
+    switch.small_fan:
       state: 'on'
 - id: '1652605497610'
   name: Home
   entities:
-    switch.air_purifier:
-      friendly_name: Air Purifier
+    switch.small_fan:
       state: 'off'

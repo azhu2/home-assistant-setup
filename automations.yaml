@@ -121,6 +121,10 @@
     device_id: c3614de33d75a997cb7c50c933a6f9c6
     entity_id: switch.front_door_lights
     domain: switch
+  - type: turn_off
+    device_id: 81b684f54340316ad98fe83ed190ea38
+    entity_id: switch.christmas_tree
+    domain: switch
   mode: single
 - id: '1671321699663'
   alias: Christmas Lighting
