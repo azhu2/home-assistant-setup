@@ -196,3 +196,39 @@
       linked_entities:
       - switch.kitchen_lights
       - switch.under_cabinet_lighting
+- id: '1694405005569'
+  alias: Garage to Front Door Lights
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 74b8b249f14ced2439d9d3d7443e7e2f
+    domain: cover
+    entity_id: 3472cb77b41fcc0da6d28e1eb992e3b1
+    type: opening
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+  - condition: numeric_state
+    entity_id: zone.home
+    above: 0
+  action:
+  - condition: device
+    type: is_off
+    device_id: c3614de33d75a997cb7c50c933a6f9c6
+    entity_id: 96ba36b666d7801ae00675a3b683b1be
+    domain: switch
+  - type: turn_on
+    device_id: c3614de33d75a997cb7c50c933a6f9c6
+    entity_id: 96ba36b666d7801ae00675a3b683b1be
+    domain: switch
+  - delay:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  - type: turn_off
+    device_id: c3614de33d75a997cb7c50c933a6f9c6
+    entity_id: 96ba36b666d7801ae00675a3b683b1be
+    domain: switch
+  mode: single

@@ -20,7 +20,7 @@
     light.standing_lamp:
       state: 'on'
     light.entry_sconces:
-	  state: 'on'
+     state: 'on'
   metadata: {}
 - id: '1652605402369'
   name: Lights Off
