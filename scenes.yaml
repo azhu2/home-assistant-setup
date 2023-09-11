@@ -19,6 +19,8 @@
       state: 'on'
     light.standing_lamp:
       state: 'on'
+    light.entry_sconces:
+	  state: 'on'
   metadata: {}
 - id: '1652605402369'
   name: Lights Off
@@ -40,6 +42,8 @@
     switch.cat_den:
       state: 'off'
     light.standing_lamp:
+      state: 'off'
+    light.entry_sconces:
       state: 'off'
   metadata: {}
 - id: '1652605481559'

@@ -137,11 +137,19 @@
               "cards": [
                 {
                   "type": "tile",
+                  "entity": "light.entry_sconces"
+                },
+                {
+                  "type": "tile",
                   "entity": "switch.marble_lamp"
                 },
                 {
                   "type": "tile",
                   "entity": "switch.pendant_lamp"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.standing_lamp"
                 },
                 {
                   "type": "conditional",
@@ -158,7 +166,7 @@
                 },
                 {
                   "type": "tile",
-                  "entity": "switch.fan"
+                  "entity": "switch.small_fan"
                 }
               ]
             },
