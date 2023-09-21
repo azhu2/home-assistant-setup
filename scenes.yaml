@@ -15,8 +15,6 @@
       state: 'on'
     switch.cat_den:
       state: 'on'
-    switch.kitchen_lights:
-      state: 'on'
     light.standing_lamp:
       state: 'on'
     light.entry_sconces:
