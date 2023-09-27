@@ -450,8 +450,8 @@
                 },
                 {
                   "type": "gauge",
-                  "name": "UDR Storage",
-                  "entity": "sensor.udr_storage_utilization",
+                  "name": "UCK Storage",
+                  "entity": "sensor.uck_g2_plus_storage_utilization",
                   "segments": [
                     {
                       "from": 0,
