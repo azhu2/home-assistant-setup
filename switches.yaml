@@ -2,9 +2,9 @@
   switches:
     garage_cam_recording:
       value_template: >
-        {{ is_state('select.garage_cam_recording_mode', 'Detections') }}
+        {{ is_state('select.garage_cam_recording_mode', 'Always') }}
       icon_template: >
-        {% if is_state('select.garage_cam_recording_mode', 'Detections') %}
+        {% if is_state('select.garage_cam_recording_mode', 'Always') %}
           mdi:record-rec
         {% else %}
           mdi:record
@@ -14,7 +14,7 @@
         target:
           entity_id: select.garage_cam_recording_mode
         data:
-          option: Detections
+          option: Always
       turn_off:
         service: select.select_option
         target:
@@ -23,9 +23,9 @@
           option: Never
     family_room_cam_recording:
       value_template: >
-        {{ is_state('select.family_room_cam_recording_mode', 'Detections') }}
+        {{ is_state('select.family_room_cam_recording_mode', 'Always') }}
       icon_template: >
-        {% if is_state('select.family_room_cam_recording_mode', 'Detections') %}
+        {% if is_state('select.family_room_cam_recording_mode', 'Always') %}
           mdi:record-rec
         {% else %}
           mdi:record
@@ -35,7 +35,7 @@
         target:
           entity_id: select.family_room_cam_recording_mode
         data:
-          option: Detections
+          option: Always
       turn_off:
         service: select.select_option
         target:
@@ -44,9 +44,9 @@
           option: Never
     bedroom_cam_recording:
       value_template: >
-        {{ is_state('select.bedroom_cam_recording_mode', 'Detections') }}
+        {{ is_state('select.bedroom_cam_recording_mode', 'Always') }}
       icon_template: >
-        {% if is_state('select.bedroom_cam_recording_mode', 'Detections') %}
+        {% if is_state('select.bedroom_cam_recording_mode', 'Always') %}
           mdi:record-rec
         {% else %}
           mdi:record
@@ -56,7 +56,7 @@
         target:
           entity_id: select.bedroom_cam_recording_mode
         data:
-          option: Detections
+          option: Always
       turn_off:
         service: select.select_option
         target:
