@@ -47,6 +47,7 @@ indoor_cameras_off:
       entity_id:
       - switch.family_room_cam_recording
       - switch.bedroom_cam_recording
+      - switch.kitchen_cam_recording
   mode: restart
 indoor_cameras_on:
   alias: Indoor Cameras On
@@ -57,4 +58,5 @@ indoor_cameras_on:
       entity_id:
       - switch.family_room_cam_recording
       - switch.bedroom_cam_recording
+      - switch.kitchen_cam_recording
   mode: restart

@@ -323,22 +323,22 @@
                 {
                   "type": "picture-glance",
                   "camera_view": "live",
-                  "title": "Garage",
-                  "camera_image": "camera.garage_cam_high",
-                  "entities": [
-                    {
-                      "entity": "switch.garage_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "type": "picture-glance",
-                  "camera_view": "live",
                   "title": "Family Room",
                   "camera_image": "camera.family_room_cam_high",
                   "entities": [
                     {
                       "entity": "switch.family_room_cam_recording"
+                    }
+                  ]
+                },
+                {
+                  "camera_view": "live",
+                  "type": "picture-glance",
+                  "title": "Kitchen",
+                  "camera_image": "camera.kitchen_cam_high",
+                  "entities": [
+                    {
+                      "entity": "switch.kitchen_cam_recording"
                     }
                   ]
                 },
@@ -354,10 +354,26 @@
                   ]
                 },
                 {
-                  "type": "tile",
-                  "entity": "camera.front_door",
-                  "name": "Front Door",
-                  "color": "primary"
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Garage",
+                  "camera_image": "camera.garage_cam_high",
+                  "entities": [
+                    {
+                      "entity": "switch.garage_cam_recording"
+                    }
+                  ]
+                },
+                {
+                  "camera_view": "live",
+                  "type": "picture-glance",
+                  "title": "Litterboxes",
+                  "camera_image": "camera.litterbox_cam_high",
+                  "entities": [
+                    {
+                      "entity": "switch.litterbox_cam_recording"
+                    }
+                  ]
                 },
                 {
                   "type": "tile",
@@ -420,18 +436,21 @@
                 },
                 {
                   "type": "gauge",
-                  "name": "UDR RAM",
-                  "entity": "sensor.udr_memory_utilization",
+                  "name": "UCK Temp",
+                  "entity": "sensor.uck_g2_plus_cpu_temperature",
                   "segments": [
                     {
                       "from": 0,
                       "color": "var(--accent-color)"
                     },
                     {
-                      "from": 90,
+                      "from": 200,
                       "color": "var(--primary-color)"
                     }
-                  ]
+                  ],
+                  "min": 90,
+                  "max": 200,
+                  "needle": false
                 },
                 {
                   "type": "gauge",
