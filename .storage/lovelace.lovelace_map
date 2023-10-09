@@ -436,6 +436,20 @@
                 },
                 {
                   "type": "gauge",
+                  "entity": "sensor.udr_cpu",
+                  "segments": [
+                    {
+                      "from": 0,
+                      "color": "var(--accent-color)"
+                    },
+                    {
+                      "from": 90,
+                      "color": "var(--primary-color)"
+                    }
+                  ]
+                },
+                {
+                  "type": "gauge",
                   "name": "UCK Temp",
                   "entity": "sensor.uck_g2_plus_cpu_temperature",
                   "segments": [
@@ -456,21 +470,6 @@
                   "type": "gauge",
                   "name": "NAS Storage",
                   "entity": "sensor.synology_nas_volume_1_volume_used",
-                  "segments": [
-                    {
-                      "from": 0,
-                      "color": "var(--accent-color)"
-                    },
-                    {
-                      "from": 90,
-                      "color": "var(--primary-color)"
-                    }
-                  ]
-                },
-                {
-                  "type": "gauge",
-                  "name": "UCK Storage",
-                  "entity": "sensor.uck_g2_plus_storage_utilization",
                   "segments": [
                     {
                       "from": 0,

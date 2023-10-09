@@ -69,3 +69,13 @@
     - type: processor_use
     - type: processor_temperature
     - type: last_boot
+- platform: unifigateway
+  host: 10.0.0.1
+  port: 443
+  username: !secret unifi_username
+  password: !secret unifi_password
+  version: UDMP-unifiOS
+  monitored_conditions:
+    - lan
+    - wan
+    - www
