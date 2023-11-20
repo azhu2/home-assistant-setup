@@ -234,3 +234,67 @@
     entity_id: 96ba36b666d7801ae00675a3b683b1be
     domain: switch
   mode: single
+- id: '1700479687297'
+  alias: Ecobee Follow Me off for Sleep
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - climate.living_room_2
+    attribute: preset_mode
+    to: Sleep
+  condition: []
+  action:
+  - service: ecobee.set_occupancy_modes
+    data:
+      follow_me: false
+    target:
+      entity_id: climate.living_room_2
+  mode: single
+- id: '1700479726554'
+  alias: Ecobee Follow Me on after Sleep
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - climate.living_room_2
+    attribute: preset_mode
+    from: Sleep
+  condition: []
+  action:
+  - service: ecobee.set_occupancy_modes
+    data:
+      follow_me: true
+    target:
+      entity_id: climate.living_room_2
+  mode: single
+- id: '1700479838658'
+  alias: HVAC off when window opens
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.guest_bathroom_window_contact
+    to: 'on'
+  condition: []
+  action:
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.living_room_2
+  mode: single
+- id: '1700479885347'
+  alias: HVAC on when window closes
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.guest_bathroom_window_contact
+    to: 'off'
+  condition: []
+  action:
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.living_room_2
+  mode: single
