@@ -28,7 +28,7 @@
             },
             {
               "type": "custom:simple-thermostat",
-              "entity": "climate.thermostat",
+              "entity": "climate.living_room_2",
               "control": {
                 "hvac": {
                   "heat_cool": false
@@ -47,10 +47,7 @@
               "decimals": 0,
               "header": {
                 "icon": "mdi:thermometer-lines",
-                "toggle": {
-                  "entity": "switch.thermostat_eco_mode",
-                  "name": "Eco"
-                }
+                "toggle": {}
               },
               "layout": {
                 "step": "row",
@@ -68,15 +65,27 @@
               },
               "sensors": [
                 {
-                  "entity": "sensor.nest_temperature_sensor_family_room_temperature",
+                  "entity": "sensor.family_room_temperature_2",
                   "name": "Family Room"
                 },
                 {
-                  "entity": "sensor.master_bedroom_temperature_sensor_temperature",
+                  "entity": "sensor.master_bedroom_temperature_2",
                   "name": "Master Bedroom"
                 },
                 {
-                  "entity": "sensor.thermostat_humidity",
+                  "entity": "sensor.office_temperature_2",
+                  "name": "Office"
+                },
+                {
+                  "entity": "sensor.guest_bedroom_temperature_2",
+                  "name": "Guest Bedroom"
+                },
+                {
+                  "entity": "sensor.little_room_temperature_2",
+                  "name": "Little Room"
+                },
+                {
+                  "entity": "sensor.living_room_humidity",
                   "name": "Humidity"
                 }
               ]
@@ -378,13 +387,13 @@
                 {
                   "type": "tile",
                   "entity": "camera.front_yard_camera_2",
-                  "name": "Front Yard",
+                  "name": "Driveway",
                   "color": "primary"
                 },
                 {
                   "type": "tile",
                   "entity": "camera.backyard_cam",
-                  "name": "Backyard",
+                  "name": "Front Yard",
                   "color": "primary"
                 },
                 {
