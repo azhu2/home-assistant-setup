@@ -255,17 +255,6 @@
       state: |
         {{ is_state_attr('climate.living_room', 'hvac_action', 'cooling') }}
 - sensor:
-    - name: Last Thermostat Sensor Update
-      state: |
-        {% set data = namespace(oldest = as_datetime(0)) %}
-        {% for sensor in integration_entities('Nest Protect') | select('match', '.*_temperature$') | list %}
-          {% if states[sensor].last_updated > data.oldest %}
-            {% set data.oldest = states[sensor].last_updated %}
-          {% endif %}
-        {% endfor %}
-        {{ utcnow() - data.oldest }}
-      icon: mdi:thermometer-off
-- sensor:
     - name: UDR CPU
       unit_of_measurement: '%'
       state: |

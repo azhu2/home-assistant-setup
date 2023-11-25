@@ -173,22 +173,6 @@
       target:
         entity_id: select.trash_day
   mode: single
-- id: '1673503803986'
-  alias: Reload Broken Thermostat Entry
-  trigger:
-  - platform: time_pattern
-    minutes: /30
-  condition:
-  - condition: template
-    value_template: '{{ as_timedelta(states(''sensor.last_thermostat_sensor_update''))
-      > as_timedelta(''0:30:00'') }}
-
-      '
-  action:
-  - service: homeassistant.reload_config_entry
-    data:
-      entry_id: 49992082efd965afbeb5a9e0f18908fa
-  mode: single
 - id: '1678660146641'
   alias: Sync Kitchen Lights
   description: ''
