@@ -39,10 +39,10 @@
               "entity": "climate.living_room"
             },
             {
+              "type": "glance",
               "show_name": true,
               "show_icon": true,
               "show_state": true,
-              "type": "glance",
               "entities": [
                 {
                   "entity": "sensor.family_room_temperature_2",
@@ -73,30 +73,25 @@
               "columns": 6
             },
             {
-              "type": "vertical-stack",
-              "cards": [
+              "type": "conditional",
+              "conditions": [
                 {
-                  "type": "conditional",
-                  "conditions": [
-                    {
-                      "entity": "switch.trash_day",
-                      "state": "on"
-                    }
-                  ],
-                  "card": {
-                    "type": "tile",
-                    "entity": "select.trash_day",
-                    "color": "primary",
-                    "icon_tap_action": {
-                      "action": "call-service",
-                      "service": "switch.toggle",
-                      "target": {
-                        "entity_id": "switch.trash_day"
-                      }
-                    }
+                  "entity": "switch.trash_day",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "tile",
+                "entity": "select.trash_day",
+                "color": "primary",
+                "icon_tap_action": {
+                  "action": "call-service",
+                  "service": "switch.toggle",
+                  "target": {
+                    "entity_id": "switch.trash_day"
                   }
                 }
-              ]
+              }
             },
             {
               "type": "conditional",
