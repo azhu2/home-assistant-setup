@@ -27,68 +27,45 @@
               ]
             },
             {
-              "type": "custom:simple-thermostat",
-              "entity": "climate.living_room_2",
-              "control": {
-                "hvac": {
-                  "heat_cool": false
-                },
-                "fan": {
-                  "off": {
-                    "icon": "mdi:fan-off"
-                  },
-                  "on": {
-                    "icon": "mdi:fan"
-                  }
-                }
-              },
-              "fallback": "--",
-              "step_size": 1,
-              "decimals": 0,
-              "header": {
-                "icon": "mdi:thermometer-lines",
-                "toggle": {}
-              },
-              "layout": {
-                "step": "row",
-                "mode": {
-                  "icons": true,
-                  "names": false,
-                  "headings": false
-                }
-              },
-              "hide": {
-                "temperature": true
-              },
-              "label": {
-                "state": "Status"
-              },
-              "sensors": [
+              "type": "thermostat",
+              "entity": "climate.living_room"
+            },
+            {
+              "show_name": true,
+              "show_icon": true,
+              "show_state": true,
+              "type": "glance",
+              "entities": [
                 {
                   "entity": "sensor.family_room_temperature_2",
-                  "name": "Family Room"
+                  "name": "Family"
+                },
+                {
+                  "entity": "sensor.living_room_current_temperature",
+                  "name": "Living"
                 },
                 {
                   "entity": "sensor.master_bedroom_temperature_2",
-                  "name": "Master Bedroom"
+                  "name": "Master"
+                },
+                {
+                  "entity": "sensor.guest_bedroom_temperature_2",
+                  "name": "Guest"
                 },
                 {
                   "entity": "sensor.office_temperature_2",
                   "name": "Office"
                 },
                 {
-                  "entity": "sensor.guest_bedroom_temperature_2",
-                  "name": "Guest Bedroom"
-                },
-                {
                   "entity": "sensor.little_room_temperature_2",
-                  "name": "Little Room"
+                  "name": "Little"
                 },
                 {
-                  "entity": "sensor.living_room_humidity",
+                  "entity": "sensor.living_room_current_humidity",
                   "name": "Humidity"
                 }
-              ]
+              ],
+              "state_color": false
             },
             {
               "type": "vertical-stack",
@@ -598,44 +575,52 @@
               "name": "Temperature",
               "entities": [
                 {
-                  "entity": "climate.thermostat",
-                  "attribute": "current_temperature",
-                  "name": "Overall",
+                  "entity": "sensor.living_room_current_temperature",
+                  "name": "Average",
                   "show_fill": false,
                   "color": "var(--primary-color)"
                 },
                 {
-                  "entity": "climate.thermostat",
+                  "entity": "climate.living_room_2",
                   "attribute": "temperature",
                   "name": "Target",
                   "show_fill": false,
                   "color": "var(--accent-color)"
                 },
                 {
-                  "entity": "sensor.nest_temperature_sensor_family_room_temperature",
-                  "name": "Family Room",
-                  "show_fill": false,
-                  "color": "#77F"
+                  "entity": "sensor.living_room_temperature",
+                  "name": "Living Room",
+                  "show_fill": false
                 },
                 {
-                  "entity": "sensor.master_bedroom_temperature_sensor_temperature",
+                  "entity": "sensor.master_bedroom_temperature_2",
                   "name": "Master",
                   "show_fill": false,
                   "color": "#8C8"
                 },
                 {
-                  "entity": "switch.thermostat_eco_mode",
-                  "name": "Eco Mode",
-                  "color": "green",
-                  "y_axis": "secondary",
-                  "show_points": false,
-                  "show_legend": false,
-                  "show_line": false,
-                  "show_fill": true,
-                  "aggregate_func": "last"
+                  "entity": "sensor.family_room_temperature_2",
+                  "name": "Family Room",
+                  "show_fill": false
                 },
                 {
-                  "entity": "binary_sensor.thermostat_heating",
+                  "entity": "sensor.guest_bedroom_temperature_2",
+                  "name": "Guest Bedroom",
+                  "show_fill": false
+                },
+                {
+                  "entity": "sensor.office_temperature_2",
+                  "name": "Office",
+                  "show_fill": false
+                },
+                {
+                  "entity": "sensor.little_room_temperature_2",
+                  "name": "Little Room",
+                  "show_fill": false
+                },
+                {
+                  "entity": "binary_sensor.thermostat_cooling",
+                  "attribute": "hvac_action",
                   "name": "Heat On",
                   "color": "red",
                   "y_axis": "secondary",
