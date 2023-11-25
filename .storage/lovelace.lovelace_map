@@ -352,6 +352,17 @@
                   ]
                 },
                 {
+                  "camera_view": "live",
+                  "type": "picture-glance",
+                  "title": "Living Room",
+                  "camera_image": "camera.living_room_cam_high_2",
+                  "entities": [
+                    {
+                      "entity": "switch.living_room_cam_recording"
+                    }
+                  ]
+                },
+                {
                   "type": "picture-glance",
                   "camera_view": "live",
                   "title": "Bedroom",
@@ -394,12 +405,6 @@
                   "type": "tile",
                   "entity": "camera.backyard_cam",
                   "name": "Front Yard",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "camera.living_room_camera_2",
-                  "name": "Living Room",
                   "color": "primary"
                 }
               ]
