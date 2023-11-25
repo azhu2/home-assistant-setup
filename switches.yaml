@@ -143,20 +143,3 @@
           entity_id: select.trash_day
         data:
           option: Trash Day Cleared
-    thermostat_eco_mode:
-      friendly_name: Eco Mode
-      value_template: >
-        {{ is_state_attr('climate.thermostat', 'preset_mode', 'eco') }}
-      icon_template: mdi:home-lightning-bolt
-      turn_on:
-        service: climate.set_preset_mode
-        target:
-          entity_id: climate.thermostat
-        data:
-          preset_mode: eco
-      turn_off:
-        service: climate.set_preset_mode
-        target:
-          entity_id: climate.thermostat
-        data:
-          preset_mode: none

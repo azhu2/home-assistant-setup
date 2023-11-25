@@ -27,6 +27,14 @@
               ]
             },
             {
+              "show_current": true,
+              "show_forecast": true,
+              "type": "weather-forecast",
+              "entity": "weather.living_room",
+              "forecast_type": "daily",
+              "secondary_info_attribute": "wind_speed"
+            },
+            {
               "type": "thermostat",
               "entity": "climate.living_room"
             },
@@ -59,13 +67,10 @@
                 {
                   "entity": "sensor.little_room_temperature_2",
                   "name": "Little"
-                },
-                {
-                  "entity": "sensor.living_room_current_humidity",
-                  "name": "Humidity"
                 }
               ],
-              "state_color": false
+              "state_color": false,
+              "columns": 6
             },
             {
               "type": "vertical-stack",
