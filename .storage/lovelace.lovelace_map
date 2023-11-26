@@ -36,7 +36,7 @@
             },
             {
               "type": "thermostat",
-              "entity": "climate.living_room"
+              "entity": "climate.living_room_2"
             },
             {
               "type": "glance",
@@ -619,8 +619,7 @@
                   "show_fill": false
                 },
                 {
-                  "entity": "binary_sensor.thermostat_cooling",
-                  "attribute": "hvac_action",
+                  "entity": "binary_sensor.thermostat_heating",
                   "name": "Heat On",
                   "color": "red",
                   "y_axis": "secondary",
