@@ -282,6 +282,10 @@
     entity_id:
     - binary_sensor.guest_bathroom_window_contact
     to: 'on'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
   condition: []
   action:
   - service: climate.turn_off
