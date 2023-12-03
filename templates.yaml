@@ -21,7 +21,11 @@
             {% if name_1 != name %}
               {% set name_2 = name | regex_findall_index("_\d$") %}
             {% endif %}
-          
+
+            {% if name in ('udr', 'uck_g2_plus', 'synologynas') %}
+              {% continue %}
+            {% endif %}
+
             {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
             {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
             {% if rx | length > 0 and tx | length > 0 %}
@@ -57,6 +61,10 @@
               {% set name_2 = name | regex_findall_index("_\d$") %}
             {% endif %}
 
+            {% if name in ('udr', 'uck_g2_plus', 'synologynas') %}
+              {% continue %}
+            {% endif %}
+
             {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
             {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
             {% if rx | length > 0 and tx | length > 0 %}
@@ -89,7 +97,11 @@
             {% if name_1 != name %}
               {% set name_2 = name | regex_findall_index("_\d$") %}
             {% endif %}
-          
+
+            {% if name in ('udr', 'uck_g2_plus', 'synologynas') %}
+              {% continue %}
+            {% endif %}
+
             {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
             {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
             {% if rx | length > 0 and tx | length > 0 %}
@@ -123,7 +135,11 @@
             {% if name_1 != name %}
               {% set name_2 = name | regex_findall_index("_\d$") %}
             {% endif %}
-          
+
+            {% if name in ('udr', 'uck_g2_plus', 'synologynas') %}
+              {% continue %}
+            {% endif %}
+
             {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
             {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
             {% if rx | length > 0 and tx | length > 0 %}
@@ -158,7 +174,11 @@
             {% if name_1 != name %}
               {% set name_2 = name | regex_findall_index("_\d$") %}
             {% endif %}
-          
+
+            {% if name in ('udr', 'uck_g2_plus', 'synologynas') %}
+              {% continue %}
+            {% endif %}
+
             {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
             {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
             {% if rx | length > 0 and tx | length > 0 %}
@@ -191,7 +211,11 @@
             {% if name_1 != name %}
               {% set name_2 = name | regex_findall_index("_\d$") %}
             {% endif %}
-          
+
+            {% if name in ('udr', 'uck_g2_plus', 'synologynas') %}
+              {% continue %}
+            {% endif %}
+
             {% set rx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_rx%s" | format(name_1, name_2)) | list %}
             {% set tx = data.mapped | selectattr('entity_id', 'eq', "sensor.%s_tx%s" | format(name_1, name_2)) | list %}
             {% if rx | length > 0 and tx | length > 0 %}
