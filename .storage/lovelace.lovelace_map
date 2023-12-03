@@ -362,6 +362,28 @@
                   ]
                 },
                 {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Driveway",
+                  "camera_image": "camera.driveway_cam_high_2",
+                  "entities": [
+                    {
+                      "entity": "switch.driveway_cam_recording"
+                    }
+                  ]
+                },
+                {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Front Yard",
+                  "camera_image": "camera.front_yard_cam_high_3",
+                  "entities": [
+                    {
+                      "entity": "switch.front_yard_cam_recording"
+                    }
+                  ]
+                },
+                {
                   "camera_view": "live",
                   "type": "picture-glance",
                   "title": "Litterboxes",
@@ -371,18 +393,6 @@
                       "entity": "switch.litterbox_cam_recording"
                     }
                   ]
-                },
-                {
-                  "type": "tile",
-                  "entity": "camera.front_yard_camera_2",
-                  "name": "Driveway",
-                  "color": "primary"
-                },
-                {
-                  "type": "tile",
-                  "entity": "camera.backyard_cam",
-                  "name": "Front Yard",
-                  "color": "primary"
                 }
               ]
             },

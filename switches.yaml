@@ -126,6 +126,69 @@
           entity_id: select.living_room_cam_recording_mode_2
         data:
           option: Never
+    front_yard_cam_recording:
+      value_template: >
+        {{ is_state('select.front_yard_cam_recording_mode_3', 'Always') }}
+      icon_template: >
+        {% if is_state('select.front_yard_cam_recording_mode_3', 'Always') %}
+          mdi:record-rec
+        {% else %}
+          mdi:record
+        {% endif %}
+      turn_on:
+        service: select.select_option
+        target:
+          entity_id: select.front_yard_cam_recording_mode_3
+        data:
+          option: Always
+      turn_off:
+        service: select.select_option
+        target:
+          entity_id: select.front_yard_cam_recording_mode_3
+        data:
+          option: Never
+    driveway_cam_recording:
+      value_template: >
+        {{ is_state('select.driveway_cam_recording_mode_2', 'Always') }}
+      icon_template: >
+        {% if is_state('select.driveway_cam_recording_mode_2', 'Always') %}
+          mdi:record-rec
+        {% else %}
+          mdi:record
+        {% endif %}
+      turn_on:
+        service: select.select_option
+        target:
+          entity_id: select.driveway_cam_recording_mode_2
+        data:
+          option: Always
+      turn_off:
+        service: select.select_option
+        target:
+          entity_id: select.driveway_cam_recording_mode_2
+        data:
+          option: Never
+    backyard_cam_recording:
+      value_template: >
+        {{ is_state('select.backyard_cam_recording_mode', 'Always') }}
+      icon_template: >
+        {% if is_state('select.backyard_cam_recording_mode', 'Always') %}
+          mdi:record-rec
+        {% else %}
+          mdi:record
+        {% endif %}
+      turn_on:
+        service: select.select_option
+        target:
+          entity_id: select.backyard_cam_recording_mode
+        data:
+          option: Always
+      turn_off:
+        service: select.select_option
+        target:
+          entity_id: select.backyard_cam_recording_mode
+        data:
+          option: Never
     trash_day:
       friendly_name: Trash Day
       value_template: >
