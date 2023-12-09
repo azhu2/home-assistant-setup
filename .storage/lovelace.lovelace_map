@@ -30,26 +30,26 @@
               "show_current": true,
               "show_forecast": true,
               "type": "weather-forecast",
-              "entity": "weather.living_room",
+              "entity": "weather.ecobee",
               "forecast_type": "daily",
               "secondary_info_attribute": "wind_speed"
             },
             {
               "type": "thermostat",
-              "entity": "climate.living_room_2"
+              "entity": "climate.ecobee_thermostat"
             },
             {
-              "type": "glance",
               "show_name": true,
               "show_icon": true,
               "show_state": true,
+              "type": "glance",
               "entities": [
                 {
                   "entity": "sensor.family_room_temperature_2",
                   "name": "Family"
                 },
                 {
-                  "entity": "sensor.living_room_current_temperature",
+                  "entity": "sensor.living_room_temperature_2",
                   "name": "Living"
                 },
                 {
@@ -63,14 +63,10 @@
                 {
                   "entity": "sensor.office_temperature_2",
                   "name": "Office"
-                },
-                {
-                  "entity": "sensor.little_room_temperature_2",
-                  "name": "Little"
                 }
               ],
               "state_color": false,
-              "columns": 6
+              "columns": 5
             },
             {
               "type": "conditional",
@@ -585,20 +581,20 @@
               "name": "Temperature",
               "entities": [
                 {
-                  "entity": "sensor.living_room_current_temperature",
+                  "entity": "sensor.average_temperature",
                   "name": "Average",
                   "show_fill": false,
                   "color": "var(--primary-color)"
                 },
                 {
-                  "entity": "climate.living_room_2",
+                  "entity": "climate.ecobee_thermostat",
                   "attribute": "temperature",
                   "name": "Target",
                   "show_fill": false,
                   "color": "var(--accent-color)"
                 },
                 {
-                  "entity": "sensor.living_room_temperature",
+                  "entity": "sensor.living_room_temperature_2",
                   "name": "Living Room",
                   "show_fill": false
                 },
@@ -621,11 +617,6 @@
                 {
                   "entity": "sensor.office_temperature_2",
                   "name": "Office",
-                  "show_fill": false
-                },
-                {
-                  "entity": "sensor.little_room_temperature_2",
-                  "name": "Little Room",
                   "show_fill": false
                 },
                 {

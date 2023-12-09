@@ -46,7 +46,6 @@ indoor_cameras_off:
     target:
       entity_id:
       - switch.family_room_cam_recording
-      - switch.bedroom_cam_recording
       - switch.kitchen_cam_recording
       - switch.living_room_cam_recording
   mode: restart

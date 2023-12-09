@@ -26,7 +26,7 @@
     data:
       preset_mode: Away
     target:
-      entity_id: climate.living_room_2
+      entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1652605093279'
   alias: Coming Home
@@ -53,7 +53,7 @@
       data:
         preset_mode: Evening
       target:
-        entity_id: climate.living_room_2
+        entity_id: climate.ecobee_thermostat_2
     else:
     - if:
       - condition: time
@@ -64,13 +64,13 @@
         data:
           preset_mode: Sleep
         target:
-          entity_id: climate.living_room_2
+          entity_id: climate.ecobee_thermostat_2
       else:
       - service: climate.set_preset_mode
         data:
           preset_mode: Home
         target:
-          entity_id: climate.living_room_2
+          entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1652605141617'
   alias: Coming Home (Dark)
@@ -246,7 +246,7 @@
   trigger:
   - platform: state
     entity_id:
-    - climate.living_room_2
+    - climate.ecobee_thermostat_2
     attribute: preset_mode
     to: Sleep
   condition: []
@@ -255,7 +255,7 @@
     data:
       follow_me: false
     target:
-      entity_id: climate.living_room_2
+      entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1700479726554'
   alias: Ecobee Follow Me on after Sleep
@@ -263,7 +263,7 @@
   trigger:
   - platform: state
     entity_id:
-    - climate.living_room_2
+    - climate.ecobee_thermostat_2
     attribute: preset_mode
     from: Sleep
   condition: []
@@ -272,7 +272,7 @@
     data:
       follow_me: true
     target:
-      entity_id: climate.living_room_2
+      entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1700479838658'
   alias: HVAC off when window opens
@@ -291,7 +291,7 @@
   - service: climate.turn_off
     data: {}
     target:
-      entity_id: climate.living_room_2
+      entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1700479885347'
   alias: HVAC on when window closes
@@ -306,7 +306,7 @@
   - service: climate.turn_on
     data: {}
     target:
-      entity_id: climate.living_room_2
+      entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1701064768280'
   alias: Ecobee Sleep
@@ -323,7 +323,7 @@
     data:
       preset_mode: Sleep
     target:
-      entity_id: climate.living_room_2
+      entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1701064791381'
   alias: Ecobee Daytime
@@ -340,7 +340,7 @@
     data:
       preset_mode: Home
     target:
-      entity_id: climate.living_room_2
+      entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1701064828554'
   alias: Ecobee Evening
@@ -357,5 +357,6 @@
     data:
       preset_mode: Evening
     target:
-      entity_id: climate.living_room_2
+      entity_id: climate.ecobee_thermostat_2
   mode: single
+

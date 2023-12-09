@@ -273,11 +273,11 @@
 - binary_sensor:
     - name: Thermostat Heating
       state: |
-        {{ is_state_attr('climate.living_room', 'hvac_action', 'heating') }}
+        {{ is_state_attr('climate.ecobee_thermostat', 'hvac_action', 'heating') }}
 - binary_sensor:
     - name: Thermostat Cooling
       state: |
-        {{ is_state_attr('climate.living_room', 'hvac_action', 'cooling') }}
+        {{ is_state_attr('climate.ecobee_thermostat', 'hvac_action', 'cooling') }}
 - sensor:
     - name: UDR CPU
       unit_of_measurement: '%'
