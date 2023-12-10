@@ -69,6 +69,10 @@
               "columns": 5
             },
             {
+              "type": "humidifier",
+              "entity": "humidifier.living_room"
+            },
+            {
               "type": "conditional",
               "conditions": [
                 {

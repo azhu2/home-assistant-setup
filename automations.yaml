@@ -359,4 +359,45 @@
     target:
       entity_id: climate.ecobee_thermostat_2
   mode: single
-
+- id: '1702174018759'
+  alias: Humidifier Off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: 35220600519dfb1ad7235efc613b084f
+    entity_id: a2d44d0527b58da280b2d3e7408aac32
+    domain: humidifier
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      rgb_color:
+      - 151
+      - 231
+      - 164
+      brightness_pct: 10
+    target:
+      entity_id: light.humidifier_mood_light
+  mode: single
+- id: '1702174102917'
+  alias: Humidifier On
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 35220600519dfb1ad7235efc613b084f
+    entity_id: a2d44d0527b58da280b2d3e7408aac32
+    domain: humidifier
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      rgb_color:
+      - 46
+      - 169
+      - 245
+      brightness_pct: 25
+    target:
+      entity_id: light.humidifier_mood_light
+  mode: single
