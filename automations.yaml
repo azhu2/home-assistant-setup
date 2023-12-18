@@ -241,7 +241,7 @@
     domain: switch
   mode: single
 - id: '1700479687297'
-  alias: Ecobee Follow Me off for Sleep
+  alias: Ecobee Follow Me Off
   description: ''
   trigger:
   - platform: state
@@ -249,6 +249,11 @@
     - climate.ecobee_thermostat_2
     attribute: preset_mode
     to: Sleep
+  - platform: state
+    entity_id:
+    - climate.ecobee_thermostat_2
+    attribute: preset_mode
+    to: Away
   condition: []
   action:
   - service: ecobee.set_occupancy_modes
@@ -258,14 +263,19 @@
       entity_id: climate.ecobee_thermostat_2
   mode: single
 - id: '1700479726554'
-  alias: Ecobee Follow Me on after Sleep
+  alias: Ecobee Follow Me On
   description: ''
   trigger:
   - platform: state
     entity_id:
     - climate.ecobee_thermostat_2
     attribute: preset_mode
-    from: Sleep
+    to: Home
+  - platform: state
+    entity_id:
+    - climate.ecobee_thermostat_2
+    attribute: preset_mode
+    to: Evening
   condition: []
   action:
   - service: ecobee.set_occupancy_modes
