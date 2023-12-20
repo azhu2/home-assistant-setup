@@ -206,3 +206,16 @@
           entity_id: select.trash_day
         data:
           option: Trash Day Cleared
+    humidifier_switch:
+      friendly_name: Humidifier Switch
+      value_template: >
+        {{ is_state('humidifier.humidifier', 'on') }}
+      turn_on:
+        service: humidifier.turn_on
+        target:
+          entity_id: humidifier.humidifier
+      turn_off:
+        service: humidifier.turn_off
+        target:
+          entity_id: humidifier.humidifier
+

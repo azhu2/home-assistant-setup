@@ -386,7 +386,7 @@
       - 151
       - 231
       - 164
-      brightness_pct: 10
+      brightness_pct: 50
     target:
       entity_id: light.humidifier_mood_light
   mode: single
@@ -407,7 +407,7 @@
       - 46
       - 169
       - 245
-      brightness_pct: 25
+      brightness_pct: 75
     target:
       entity_id: light.humidifier_mood_light
   mode: single
