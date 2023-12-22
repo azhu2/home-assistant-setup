@@ -383,10 +383,10 @@
   - service: light.turn_on
     data:
       rgb_color:
-      - 151
-      - 231
-      - 164
-      brightness_pct: 50
+      - 254
+      - 32
+      - 0
+      brightness_pct: 75
     target:
       entity_id: light.humidifier_mood_light
   mode: single
@@ -404,10 +404,10 @@
   - service: light.turn_on
     data:
       rgb_color:
-      - 46
-      - 169
-      - 245
-      brightness_pct: 75
+      - 32
+      - 255
+      - 0
+      brightness_pct: 100
     target:
       entity_id: light.humidifier_mood_light
   mode: single
