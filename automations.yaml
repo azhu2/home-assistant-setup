@@ -27,6 +27,7 @@
       preset_mode: Away
     target:
       entity_id: climate.ecobee_thermostat_2
+    enabled: true
   mode: single
 - id: '1652605093279'
   alias: Coming Home
@@ -47,7 +48,7 @@
   - if:
     - condition: time
       after: '18:00:00'
-      before: '1:00:00'
+      before: 01:00:00
     then:
     - service: climate.set_preset_mode
       data:
@@ -57,7 +58,7 @@
     else:
     - if:
       - condition: time
-        after: '1:00:00'
+        after: 01:00:00
         before: 09:00:00
       then:
       - service: climate.set_preset_mode
@@ -71,6 +72,7 @@
           preset_mode: Home
         target:
           entity_id: climate.ecobee_thermostat_2
+    enabled: true
   mode: single
 - id: '1652605141617'
   alias: Coming Home (Dark)

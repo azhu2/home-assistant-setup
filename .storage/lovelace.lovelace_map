@@ -244,13 +244,13 @@
                   "name": "Backyard"
                 },
                 {
-                  "type": "tile",
-                  "entity": "cover.garage_door",
                   "features": [
                     {
                       "type": "cover-open-close"
                     }
-                  ]
+                  ],
+                  "type": "tile",
+                  "entity": "cover.garage_door_ratgdo"
                 }
               ]
             },
