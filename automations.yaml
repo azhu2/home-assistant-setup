@@ -293,6 +293,7 @@
   - platform: state
     entity_id:
     - binary_sensor.guest_bathroom_window_contact
+    - binary_sensor.guest_bedroom_window_contact
     to: 'on'
     for:
       hours: 0
@@ -312,6 +313,7 @@
   - platform: state
     entity_id:
     - binary_sensor.guest_bathroom_window_contact
+    - binary_sensor.guest_bedroom_window_contact
     to: 'off'
   condition: []
   action:
