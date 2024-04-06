@@ -17,6 +17,7 @@ frontend:
 http:
   cors_allowed_origins:
     - http://localhost:3000
+    - http://10.0.0.6:3000
 
 automation: !include automations.yaml
 input_text: !include input_texts.yaml
