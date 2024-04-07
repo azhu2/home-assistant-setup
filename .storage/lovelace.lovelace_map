@@ -320,6 +320,17 @@
                 {
                   "camera_view": "live",
                   "type": "picture-glance",
+                  "title": "Dining Room",
+                  "camera_image": "camera.dining_room_cam_high",
+                  "entities": [
+                    {
+                      "entity": "switch.dining_room_cam_recording"
+                    }
+                  ]
+                },
+                {
+                  "camera_view": "live",
+                  "type": "picture-glance",
                   "title": "Kitchen",
                   "camera_image": "camera.kitchen_cam_high",
                   "entities": [
@@ -380,17 +391,6 @@
                   "entities": [
                     {
                       "entity": "switch.front_yard_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "camera_view": "live",
-                  "type": "picture-glance",
-                  "title": "Litterboxes",
-                  "camera_image": "camera.litterbox_cam_high",
-                  "entities": [
-                    {
-                      "entity": "switch.litterbox_cam_recording"
                     }
                   ]
                 }
