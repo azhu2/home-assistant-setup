@@ -302,7 +302,7 @@
             },
             {
               "square": false,
-              "columns": 2,
+              "columns": 3,
               "type": "grid",
               "title": "Cameras",
               "cards": [
@@ -391,6 +391,17 @@
                   "entities": [
                     {
                       "entity": "switch.front_yard_cam_recording"
+                    }
+                  ]
+                },
+                {
+                  "type": "picture-glance",
+                  "camera_view": "live",
+                  "title": "Back Yard",
+                  "camera_image": "camera.backyard_cam_high",
+                  "entities": [
+                    {
+                      "entity": "switch.backyard_cam_recording"
                     }
                   ]
                 }
