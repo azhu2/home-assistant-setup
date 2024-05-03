@@ -24,7 +24,7 @@
     data: {}
   - service: climate.set_preset_mode
     data:
-      preset_mode: Away
+      preset_mode: away_indefinitely
     target:
       entity_id: climate.ecobee_thermostat_2
     enabled: true
@@ -63,13 +63,13 @@
       then:
       - service: climate.set_preset_mode
         data:
-          preset_mode: Sleep
+          preset_mode: sleep
         target:
           entity_id: climate.ecobee_thermostat_2
       else:
       - service: climate.set_preset_mode
         data:
-          preset_mode: Home
+          preset_mode: home
         target:
           entity_id: climate.ecobee_thermostat_2
     enabled: true
@@ -250,12 +250,12 @@
     entity_id:
     - climate.ecobee_thermostat_2
     attribute: preset_mode
-    to: Sleep
+    to: sleep
   - platform: state
     entity_id:
     - climate.ecobee_thermostat_2
     attribute: preset_mode
-    to: Away
+    to: away
   condition: []
   action:
   - service: ecobee.set_occupancy_modes
@@ -272,7 +272,7 @@
     entity_id:
     - climate.ecobee_thermostat_2
     attribute: preset_mode
-    to: Home
+    to: home
   - platform: state
     entity_id:
     - climate.ecobee_thermostat_2
@@ -335,7 +335,7 @@
   action:
   - service: climate.set_preset_mode
     data:
-      preset_mode: Sleep
+      preset_mode: sleep
     target:
       entity_id: climate.ecobee_thermostat_2
   mode: single
@@ -352,7 +352,7 @@
   action:
   - service: climate.set_preset_mode
     data:
-      preset_mode: Home
+      preset_mode: home
     target:
       entity_id: climate.ecobee_thermostat_2
   mode: single
