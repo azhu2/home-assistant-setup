@@ -72,7 +72,10 @@
           preset_mode: home
         target:
           entity_id: climate.ecobee_thermostat_2
-    enabled: true
+    enabled: false
+  - service: script.ecobee_automation
+    metadata: {}
+    data: {}
   mode: single
 - id: '1652605141617'
   alias: Coming Home (Dark)
@@ -256,6 +259,11 @@
     - climate.ecobee_thermostat_2
     attribute: preset_mode
     to: away
+  - platform: state
+    entity_id:
+    - climate.ecobee_thermostat_2
+    attribute: preset_mode
+    to: Late Night
   condition: []
   action:
   - service: ecobee.set_occupancy_modes
@@ -414,4 +422,16 @@
       brightness_pct: 100
     target:
       entity_id: light.humidifier_mood_light
+  mode: single
+- id: '1715152774221'
+  alias: Update Ecobee Schedule Hourly
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: '0'
+  condition: []
+  action:
+  - service: script.ecobee_automation
+    metadata: {}
+    data: {}
   mode: single

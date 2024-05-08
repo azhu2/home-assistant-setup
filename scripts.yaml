@@ -38,6 +38,7 @@ adguard_home_off_30_min:
         entity_id: switch.adguard_home_protection
         domain: switch
   mode: restart
+  icon: mdi:timer
 indoor_cameras_off:
   alias: Indoor Cameras Off
   sequence:
@@ -51,6 +52,7 @@ indoor_cameras_off:
       - switch.bedroom_cam_recording
       - switch.dining_room_cam_recording
   mode: restart
+  icon: mdi:camera-off
 indoor_cameras_on:
   alias: Indoor Cameras On
   sequence:
@@ -64,3 +66,44 @@ indoor_cameras_on:
       - switch.living_room_cam_recording
       - switch.dining_room_cam_recording
   mode: restart
+  icon: mdi:camera
+ecobee_automation:
+  alias: Ecobee Schedule
+  sequence:
+  - choose:
+    - conditions:
+      - condition: time
+        before: 05:00:00
+      sequence:
+      - service: climate.set_preset_mode
+        target:
+          entity_id: climate.ecobee_thermostat_2
+        data:
+          preset_mode: Late Night
+    - conditions:
+      - condition: time
+        after: 05:00:00
+        before: 09:00:00
+      sequence:
+      - service: climate.set_preset_mode
+        target:
+          entity_id: climate.ecobee_thermostat_2
+        data:
+          preset_mode: sleep
+    - conditions:
+      - condition: time
+        after: '18:00:00'
+      sequence:
+      - service: climate.set_preset_mode
+        target:
+          entity_id: climate.ecobee_thermostat_2
+        data:
+          preset_mode: Evening
+    default:
+    - service: climate.set_preset_mode
+      target:
+        entity_id: climate.ecobee_thermostat_2
+      data:
+        preset_mode: home
+  mode: single
+  icon: mdi:thermometer-auto
