@@ -179,16 +179,23 @@
   alias: Trash Day
   description: ''
   trigger:
-  - platform: time
-    at: '17:00:00'
+  - platform: calendar
+    event: start
+    offset: 0:0:0
+    entity_id: calendar.trash_schedule
+  - platform: calendar
+    event: end
+    offset: 0:0:0
+    entity_id: calendar.trash_schedule
   condition: []
   action:
   - choose:
     - conditions:
       - condition: template
-        value_template: '{{ now().isoweekday() == 4 }}'
+        value_template: '{{ trigger.event == ''start'' }}'
       sequence:
       - service: select.select_option
+        metadata: {}
         data:
           option: Trash Day
         target:
