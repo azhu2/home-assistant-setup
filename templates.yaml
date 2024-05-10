@@ -278,17 +278,3 @@
     - name: Thermostat Cooling
       state: |
         {{ is_state_attr('climate.ecobee_thermostat', 'hvac_action', 'cooling') }}
-- sensor:
-    - name: UDR CPU
-      unit_of_measurement: '%'
-      state: |
-        {{ state_attr('sensor.unifi_gateway_wan', 'gw_system-stats')['cpu'] }}
-      availability: |
-        {{ states('sensor.unifi_gateway_wan') == 'OK' }}
-- sensor:
-    - name: UDR Memory
-      unit_of_measurement: '%'
-      state: |
-        {{ state_attr('sensor.unifi_gateway_wan', 'gw_system-stats')['mem'] }}
-      availability: |
-        {{ states('sensor.unifi_gateway_wan') == 'OK' }}
