@@ -35,13 +35,3 @@
   sampling_size: 10
   max_age:
     minutes: 1
-- platform: unifigateway
-  host: 10.0.0.1
-  port: 443
-  username: !secret unifi_username
-  password: !secret unifi_password
-  version: UDMP-unifiOS
-  monitored_conditions:
-    - lan
-    - wan
-    - www
