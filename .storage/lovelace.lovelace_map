@@ -448,7 +448,7 @@
                 },
                 {
                   "type": "gauge",
-                  "entity": "sensor.udr_cpu",
+                  "entity": "sensor.udr_cpu_utilization",
                   "segments": [
                     {
                       "from": 0,
@@ -458,12 +458,13 @@
                       "from": 90,
                       "color": "var(--primary-color)"
                     }
-                  ]
+                  ],
+                  "name": "UDR CPU"
                 },
                 {
                   "type": "gauge",
-                  "name": "UCK Temp",
-                  "entity": "sensor.uck_g2_plus_cpu_temperature",
+                  "name": "UDR RAM",
+                  "entity": "sensor.udr_memory_utilization",
                   "segments": [
                     {
                       "from": 0,
