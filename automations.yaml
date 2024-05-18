@@ -45,34 +45,6 @@
     metadata: {}
   - service: script.indoor_cameras_off
     data: {}
-  - if:
-    - condition: time
-      after: '18:00:00'
-      before: 01:00:00
-    then:
-    - service: climate.set_preset_mode
-      data:
-        preset_mode: Evening
-      target:
-        entity_id: climate.ecobee_thermostat_2
-    else:
-    - if:
-      - condition: time
-        after: 01:00:00
-        before: 09:00:00
-      then:
-      - service: climate.set_preset_mode
-        data:
-          preset_mode: sleep
-        target:
-          entity_id: climate.ecobee_thermostat_2
-      else:
-      - service: climate.set_preset_mode
-        data:
-          preset_mode: home
-        target:
-          entity_id: climate.ecobee_thermostat_2
-    enabled: false
   - service: script.ecobee_automation
     metadata: {}
     data: {}
@@ -337,57 +309,6 @@
     target:
       entity_id: climate.ecobee_thermostat_2
   mode: single
-- id: '1701064768280'
-  alias: Ecobee Sleep
-  description: ''
-  trigger:
-  - platform: time
-    at: 01:00:00
-  condition:
-  - condition: numeric_state
-    entity_id: zone.home
-    above: 0
-  action:
-  - service: climate.set_preset_mode
-    data:
-      preset_mode: sleep
-    target:
-      entity_id: climate.ecobee_thermostat_2
-  mode: single
-- id: '1701064791381'
-  alias: Ecobee Daytime
-  description: ''
-  trigger:
-  - platform: time
-    at: 09:00:00
-  condition:
-  - condition: numeric_state
-    entity_id: zone.home
-    above: 0
-  action:
-  - service: climate.set_preset_mode
-    data:
-      preset_mode: home
-    target:
-      entity_id: climate.ecobee_thermostat_2
-  mode: single
-- id: '1701064828554'
-  alias: Ecobee Evening
-  description: ''
-  trigger:
-  - platform: time
-    at: '18:00:00'
-  condition:
-  - condition: numeric_state
-    entity_id: zone.home
-    above: 0
-  action:
-  - service: climate.set_preset_mode
-    data:
-      preset_mode: Evening
-    target:
-      entity_id: climate.ecobee_thermostat_2
-  mode: single
 - id: '1702174018759'
   alias: Humidifier Off
   description: ''
@@ -437,6 +358,26 @@
   - platform: time_pattern
     minutes: '0'
   condition: []
+  action:
+  - service: script.ecobee_automation
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1716074049244'
+  alias: Ecobee Preset Schedule
+  description: ''
+  trigger:
+  - platform: calendar
+    event: start
+    offset: 0:0:0
+    entity_id: calendar.ecobee_schedule
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: climate.ecobee_thermostat_2
+      attribute: preset_mode
+      state: away_indefinitely
   action:
   - service: script.ecobee_automation
     metadata: {}

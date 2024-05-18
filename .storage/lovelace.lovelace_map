@@ -475,8 +475,6 @@
                       "color": "var(--primary-color)"
                     }
                   ],
-                  "min": 90,
-                  "max": 200,
                   "needle": false
                 },
                 {

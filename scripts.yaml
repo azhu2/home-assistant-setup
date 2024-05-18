@@ -68,7 +68,7 @@ indoor_cameras_on:
   mode: restart
   icon: mdi:camera
 ecobee_automation:
-  alias: Ecobee Schedule
+  alias: Set Ecobee Preset
   sequence:
   - choose:
     - conditions:
