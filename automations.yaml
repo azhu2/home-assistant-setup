@@ -383,3 +383,15 @@
     metadata: {}
     data: {}
   mode: single
+- id: '1716074316379'
+  alias: Restart HA Daily
+  description: Try to keep CPU issues down
+  trigger:
+  - platform: time
+    at: 08:00:00
+  condition: []
+  action:
+  - service: homeassistant.restart
+    metadata: {}
+    data: {}
+  mode: single
