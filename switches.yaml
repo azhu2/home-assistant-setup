@@ -218,4 +218,17 @@
         service: humidifier.turn_off
         target:
           entity_id: humidifier.humidifier
+    m440i_xdrive_unlocked:
+      friendly_name: M440i xDrive Unlocked
+      value_template: >
+        {{ is_state('lock.m440i_xdrive_lock', 'unlocked') }}
+      turn_on:
+        service: lock.unlock
+        target:
+          entity_id: lock.m440i_xdrive_lock
+      turn_off:
+        service: lock.lock
+        target:
+          entity_id: lock.m440i_xdrive_lock
+
 
