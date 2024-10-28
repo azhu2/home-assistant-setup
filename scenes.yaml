@@ -2,23 +2,51 @@
   name: Lights On
   entities:
     switch.marble_lamp:
+      icon: phu:floor-shade
+      friendly_name: Marble Lamp
       state: 'on'
     switch.pendant_lamp:
+      icon: mdi:desk-lamp
+      friendly_name: Pendant Lamp
       state: 'on'
     light.family_room_lights:
+      supported_color_modes:
+      - brightness
       color_mode: brightness
       brightness: 255
+      icon: bha:ceiling-downlight
+      friendly_name: Family Room Lights
+      supported_features: 32
       state: 'on'
     light.family_room_chandelier:
+      supported_color_modes:
+      - brightness
       color_mode: brightness
-      brightness: 158
+      brightness: 255
+      icon: hue:pendant-long
+      friendly_name: Family Room Chandelier
+      supported_features: 32
       state: 'on'
     switch.cat_den:
+      icon: mdi:string-lights
+      friendly_name: Cat Den
       state: 'on'
     light.standing_lamp:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      icon: mdi:lamp
+      friendly_name: Standing Lamp
+      supported_features: 0
       state: 'on'
     light.entry_sconces:
-     state: 'on'
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      icon: mdi:wall-sconce
+      friendly_name: Entry Sconces
+      supported_features: 0
+      state: 'on'
   metadata: {}
 - id: '1652605402369'
   name: Lights Off
