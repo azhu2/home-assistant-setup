@@ -173,14 +173,15 @@
                   ]
                 },
                 {
-                  "type": "tile",
-                  "entity": "light.family_room_chandelier",
-                  "name": "Chandelier",
                   "features": [
                     {
                       "type": "light-brightness"
                     }
-                  ]
+                  ],
+                  "type": "tile",
+                  "entity": "light.family_room_chandelier",
+                  "name": "Chandelier",
+                  "color": "red"
                 },
                 {
                   "type": "tile",
@@ -221,6 +222,24 @@
                       "type": "light-brightness"
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "title": "Hallway",
+              "square": false,
+              "columns": 2,
+              "cards": [
+                {
+                  "type": "tile",
+                  "entity": "switch.hallway_light",
+                  "name": "Can Lights"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.stairway_lights",
+                  "name": "Chandelier"
                 }
               ]
             },

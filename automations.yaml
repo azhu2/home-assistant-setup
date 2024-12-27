@@ -32,22 +32,24 @@
 - id: '1652605093279'
   alias: Coming Home
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - zone.home
     from: '0'
-  condition: []
-  action:
-  - service: scene.turn_on
-    target:
+    trigger: state
+  conditions: []
+  actions:
+  - target:
       entity_id: scene.home
     metadata: {}
-  - service: script.indoor_cameras_off
+    action: scene.turn_on
     data: {}
-  - service: script.ecobee_automation
-    metadata: {}
+  - data: {}
+    action: script.indoor_cameras_off
+    enabled: true
+  - metadata: {}
     data: {}
+    action: script.ecobee_automation
   mode: single
 - id: '1652605141617'
   alias: Coming Home (Dark)
