@@ -5,12 +5,6 @@
       state: 'on'
     switch.pendant_lamp:
       state: 'on'
-    light.family_room_lights:
-      brightness: 255
-      state: 'on'
-    light.family_room_chandelier:
-      brightness: 255
-      state: 'on'
     switch.cat_den:
       state: 'on'
     light.standing_lamp:
