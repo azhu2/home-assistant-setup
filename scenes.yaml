@@ -11,8 +11,6 @@
       state: 'on'
     light.entry_sconces:
       state: 'on'
-    switch.stairway_lights:
-      state: 'on'
     switch.hallway_light:
       state: 'on'
   metadata: {}
