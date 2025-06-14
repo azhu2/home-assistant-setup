@@ -13,6 +13,7 @@
 !switches.yaml
 !templates.yaml
 !generic_hygrostat.yaml
+!climate.yaml
 
 !.storage/
 .storage/*

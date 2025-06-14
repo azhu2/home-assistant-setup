@@ -32,3 +32,4 @@ sensor: !include sensors.yaml
 switch: !include switches.yaml
 template: !include templates.yaml
 generic_hygrostat: !include generic_hygrostat.yaml
+climate: !include climate.yaml
