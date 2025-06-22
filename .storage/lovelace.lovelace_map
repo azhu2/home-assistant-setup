@@ -7,7 +7,7 @@
       "views": [
         {
           "theme": "Caule Light Purple",
-          "title": "Desktop",
+          "title": "HA",
           "subview": false,
           "type": "sections",
           "layout": {
@@ -385,6 +385,17 @@
               "content": "# {{ now().timestamp() | timestamp_custom('%A %B %-d, %Y') }}\n## {{ now().timestamp() | timestamp_custom('%I:%M %p') }}"
             }
           }
+        },
+        {
+          "type": "panel",
+          "title": "Custom",
+          "path": "custom",
+          "cards": [
+            {
+              "type": "iframe",
+              "url": "http://10.0.0.106:8124/"
+            }
+          ]
         }
       ],
       "title": "Home"
