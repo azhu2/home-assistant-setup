@@ -1,33 +1,39 @@
 - id: '1652604926204'
   alias: Away
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - zone.home
     to: '0'
     for:
       hours: 0
       minutes: 5
       seconds: 0
-  condition: []
-  action:
-  - service: scene.turn_on
-    target:
+    trigger: state
+  conditions: []
+  actions:
+  - target:
       entity_id: scene.away_from_home
     metadata: {}
-  - service: scene.turn_on
-    target:
+    action: scene.turn_on
+    data: {}
+  - target:
       entity_id: scene.lights_off
     metadata: {}
-  - service: script.indoor_cameras_on
+    action: scene.turn_on
     data: {}
-  - service: climate.set_preset_mode
-    data:
-      preset_mode: away_indefinitely
+  - data: {}
+    action: script.indoor_cameras_on
+  - action: climate.turn_off
+    metadata: {}
+    data: {}
     target:
-      entity_id: climate.ecobee_thermostat_2
-    enabled: true
+      entity_id: climate.bedroom_ac
+  - action: climate.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: climate.office_ac
   mode: single
 - id: '1652605093279'
   alias: Coming Home
@@ -47,9 +53,9 @@
   - data: {}
     action: script.indoor_cameras_off
     enabled: true
-  - metadata: {}
+  - action: script.1750553017670
+    metadata: {}
     data: {}
-    action: script.ecobee_automation
   mode: single
 - id: '1652605141617'
   alias: Coming Home (Dark)
@@ -394,6 +400,21 @@
   condition: []
   action:
   - service: homeassistant.restart
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1750553219077'
+  alias: Hourly Climate Trigger
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    hours: /1
+  conditions:
+  - condition: numeric_state
+    entity_id: zone.home
+    above: 0
+  actions:
+  - action: script.1750553017670
     metadata: {}
     data: {}
   mode: single
