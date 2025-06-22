@@ -8,218 +8,107 @@
         {
           "theme": "Caule Light Purple",
           "title": "Desktop",
-          "path": "main",
           "subview": false,
-          "type": "custom:vertical-layout",
+          "type": "sections",
           "layout": {
-            "max_cols": 4
+            "max_cols": 5
           },
           "badges": [],
-          "cards": [
-            {
-              "type": "vertical-stack",
-              "title": "Now",
-              "cards": [
-                {
-                  "type": "markdown",
-                  "content": "# {{ now().timestamp() | timestamp_custom('%A %B %-d, %Y') }}\n## {{ now().timestamp() | timestamp_custom('%I:%M %p') }}\n"
-                }
-              ]
-            },
-            {
-              "show_current": true,
-              "show_forecast": true,
-              "type": "weather-forecast",
-              "entity": "weather.ecobee",
-              "forecast_type": "daily",
-              "secondary_info_attribute": "wind_speed"
-            },
-            {
-              "type": "thermostat",
-              "entity": "climate.ecobee_thermostat"
-            },
-            {
-              "show_name": true,
-              "show_icon": true,
-              "show_state": true,
-              "type": "glance",
-              "entities": [
-                {
-                  "entity": "sensor.family_room_temperature_2",
-                  "name": "Family"
-                },
-                {
-                  "entity": "sensor.living_room_temperature_2",
-                  "name": "Living"
-                },
-                {
-                  "entity": "sensor.master_bedroom_temperature_2",
-                  "name": "Master"
-                },
-                {
-                  "entity": "sensor.guest_bedroom_temperature_2",
-                  "name": "Guest"
-                },
-                {
-                  "entity": "sensor.office_temperature_2",
-                  "name": "Office"
-                }
-              ],
-              "state_color": false,
-              "columns": 5
-            },
-            {
-              "type": "humidifier",
-              "entity": "humidifier.living_room"
-            },
-            {
-              "type": "conditional",
-              "conditions": [
-                {
-                  "entity": "switch.trash_day",
-                  "state": "on"
-                }
-              ],
-              "card": {
-                "type": "tile",
-                "entity": "select.trash_day",
-                "color": "primary",
-                "icon_tap_action": {
-                  "action": "call-service",
-                  "service": "switch.toggle",
-                  "target": {
-                    "entity_id": "switch.trash_day"
-                  }
-                }
-              }
-            },
-            {
-              "type": "conditional",
-              "conditions": [
-                {
-                  "entity": "media_player.google_home_speakers",
-                  "state_not": "off"
-                }
-              ],
-              "card": {
-                "type": "custom:mini-media-player",
-                "entity": "media_player.google_home_speakers",
-                "artwork": "full-cover",
-                "idle_view": "when_idle",
-                "hide": {
-                  "icon": true,
-                  "power": true
-                }
-              }
-            },
-            {
-              "type": "custom:layout-break"
-            },
+          "cards": [],
+          "max_columns": 4,
+          "sections": [
             {
               "type": "grid",
-              "title": "Living Room",
-              "square": false,
-              "columns": 2,
               "cards": [
                 {
-                  "type": "tile",
-                  "entity": "light.entry_sconces"
+                  "type": "heading",
+                  "heading_style": "title",
+                  "badges": [],
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  }
                 },
                 {
-                  "type": "tile",
-                  "entity": "switch.marble_lamp"
+                  "type": "grid",
+                  "title": "Living Room",
+                  "square": false,
+                  "columns": 2,
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.marble_lamp"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "switch.pendant_lamp"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "switch.standing_lamp"
+                    }
+                  ]
                 },
                 {
-                  "type": "tile",
-                  "entity": "switch.pendant_lamp"
-                },
-                {
-                  "type": "tile",
-                  "entity": "switch.standing_lamp"
+                  "type": "grid",
+                  "title": "Outside",
+                  "square": false,
+                  "columns": 2,
+                  "cards": [
+                    {
+                      "features": [
+                        {
+                          "type": "cover-open-close"
+                        }
+                      ],
+                      "type": "tile",
+                      "entity": "cover.garage_door_ratgdo"
+                    }
+                  ]
                 },
                 {
                   "type": "conditional",
                   "conditions": [
                     {
-                      "entity": "switch.christmas_tree",
-                      "state_not": "unavailable"
+                      "entity": "media_player.google_home_speakers",
+                      "state_not": "off"
                     }
                   ],
                   "card": {
-                    "type": "tile",
-                    "entity": "switch.christmas_tree"
+                    "type": "custom:mini-media-player",
+                    "entity": "media_player.google_home_speakers",
+                    "artwork": "full-cover",
+                    "idle_view": "when_idle",
+                    "hide": {
+                      "icon": true,
+                      "power": true
+                    }
                   }
-                },
-                {
-                  "type": "tile",
-                  "entity": "switch.small_fan"
                 }
               ]
             },
             {
               "type": "grid",
-              "title": "Family Room",
-              "square": false,
-              "columns": 2,
               "cards": [
                 {
-                  "type": "tile",
-                  "entity": "light.family_room_lights",
-                  "name": "Can Lights",
+                  "type": "heading",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "thermostat",
+                  "entity": "climate.office_ac",
                   "features": [
                     {
-                      "type": "light-brightness"
+                      "type": "climate-hvac-modes"
                     }
                   ]
                 },
                 {
+                  "type": "thermostat",
+                  "entity": "climate.bedroom_ac",
                   "features": [
                     {
-                      "type": "light-brightness"
-                    }
-                  ],
-                  "type": "tile",
-                  "entity": "light.family_room_chandelier",
-                  "name": "Chandelier",
-                  "color": "red"
-                },
-                {
-                  "type": "tile",
-                  "entity": "switch.cat_den",
-                  "name": "Cat Den"
-                }
-              ]
-            },
-            {
-              "type": "grid",
-              "title": "Kitchen",
-              "square": false,
-              "columns": 2,
-              "cards": [
-                {
-                  "type": "tile",
-                  "entity": "switch.kitchen_lights",
-                  "name": "Can Lights"
-                },
-                {
-                  "type": "tile",
-                  "entity": "switch.kitchen_chandelier",
-                  "name": "Chandelier"
-                }
-              ]
-            },
-            {
-              "type": "grid",
-              "title": "Master Bedroom",
-              "square": false,
-              "columns": 2,
-              "cards": [
-                {
-                  "type": "tile",
-                  "entity": "light.master_light",
-                  "features": [
-                    {
-                      "type": "light-brightness"
+                      "type": "climate-hvac-modes"
                     }
                   ]
                 }
@@ -227,484 +116,275 @@
             },
             {
               "type": "grid",
-              "title": "Hallway",
-              "square": false,
-              "columns": 2,
               "cards": [
                 {
-                  "type": "tile",
-                  "entity": "switch.hallway_light",
-                  "name": "Can Lights"
+                  "type": "heading",
+                  "heading_style": "title"
                 },
                 {
-                  "type": "tile",
-                  "entity": "switch.stairway_lights",
-                  "name": "Chandelier"
-                }
-              ]
-            },
-            {
-              "type": "custom:layout-break"
-            },
-            {
-              "type": "grid",
-              "title": "Outside",
-              "square": false,
-              "columns": 2,
-              "cards": [
-                {
-                  "type": "tile",
-                  "entity": "switch.front_door_lights",
-                  "name": "Front Door"
-                },
-                {
-                  "type": "tile",
-                  "entity": "switch.outdoor_lights",
-                  "name": "Backyard"
-                },
-                {
-                  "features": [
-                    {
-                      "type": "cover-open-close"
-                    }
-                  ],
-                  "type": "tile",
-                  "entity": "cover.garage_door_ratgdo"
-                }
-              ]
-            },
-            {
-              "type": "vertical-stack",
-              "title": "Sprinklers",
-              "cards": [
-                {
-                  "type": "horizontal-stack",
+                  "square": false,
+                  "columns": 3,
+                  "type": "grid",
                   "cards": [
                     {
-                      "type": "tile",
-                      "entity": "switch.lawn_schedule",
-                      "name": "Lawn"
+                      "camera_view": "live",
+                      "fit_mode": "cover",
+                      "type": "picture-glance",
+                      "title": "Offce",
+                      "camera_image": "camera.office_cam_high",
+                      "entities": [
+                        {
+                          "entity": "switch.office_cam_recording"
+                        }
+                      ]
                     },
                     {
-                      "type": "tile",
-                      "entity": "switch.roses_schedule_2",
-                      "name": "Roses"
+                      "type": "picture-glance",
+                      "camera_view": "live",
+                      "title": "Family Room",
+                      "camera_image": "camera.family_room_cam_high",
+                      "entities": [
+                        {
+                          "entity": "switch.family_room_cam_recording"
+                        }
+                      ]
+                    },
+                    {
+                      "camera_view": "live",
+                      "type": "picture-glance",
+                      "title": "Kitchen",
+                      "camera_image": "camera.kitchen_cam_high",
+                      "entities": [
+                        {
+                          "entity": "switch.kitchen_cam_recording"
+                        }
+                      ]
+                    },
+                    {
+                      "camera_view": "live",
+                      "type": "picture-glance",
+                      "title": "Living Room",
+                      "camera_image": "camera.living_room_cam_high_2",
+                      "entities": [
+                        {
+                          "entity": "switch.living_room_cam_recording"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "picture-glance",
+                      "camera_view": "live",
+                      "title": "Garage",
+                      "camera_image": "camera.garage_cam_high",
+                      "entities": [
+                        {
+                          "entity": "switch.garage_cam_recording"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "picture-glance",
+                      "camera_view": "live",
+                      "title": "Back Yard",
+                      "camera_image": "camera.backyard_cam_high",
+                      "entities": [
+                        {
+                          "entity": "switch.backyard_cam_recording"
+                        }
+                      ]
                     }
-                  ]
+                  ],
+                  "title": "Cameras"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading_style": "title"
                 },
                 {
-                  "type": "horizontal-stack",
+                  "square": false,
+                  "columns": 2,
+                  "type": "grid",
                   "cards": [
                     {
-                      "type": "button",
-                      "entity": "switch.backyard_primary"
+                      "type": "gauge",
+                      "name": "NAS CPU",
+                      "entity": "sensor.synology_nas_cpu_utilization_total",
+                      "segments": [
+                        {
+                          "from": 0,
+                          "color": "var(--accent-color)"
+                        },
+                        {
+                          "from": 90,
+                          "color": "var(--primary-color)"
+                        }
+                      ]
                     },
                     {
-                      "type": "button",
-                      "entity": "switch.backyard_secondary"
+                      "type": "gauge",
+                      "name": "NAS RAM",
+                      "entity": "sensor.synology_nas_memory_usage_real",
+                      "segments": [
+                        {
+                          "from": 0,
+                          "color": "var(--accent-color)"
+                        },
+                        {
+                          "from": 90,
+                          "color": "var(--primary-color)"
+                        }
+                      ]
                     },
                     {
-                      "type": "button",
-                      "entity": "switch.front_yard_primary"
+                      "type": "gauge",
+                      "entity": "sensor.udr_cpu_utilization",
+                      "segments": [
+                        {
+                          "from": 0,
+                          "color": "var(--accent-color)"
+                        },
+                        {
+                          "from": 90,
+                          "color": "var(--primary-color)"
+                        }
+                      ],
+                      "name": "UDR CPU"
                     },
                     {
-                      "type": "button",
-                      "entity": "switch.front_yard_secondary"
+                      "type": "gauge",
+                      "name": "UDR RAM",
+                      "entity": "sensor.udr_memory_utilization",
+                      "segments": [
+                        {
+                          "from": 0,
+                          "color": "var(--accent-color)"
+                        },
+                        {
+                          "from": 200,
+                          "color": "var(--primary-color)"
+                        }
+                      ],
+                      "needle": false
                     },
                     {
-                      "type": "button",
-                      "entity": "switch.backyard_drip"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "square": false,
-              "columns": 3,
-              "type": "grid",
-              "title": "Cameras",
-              "cards": [
-                {
-                  "type": "picture-glance",
-                  "camera_view": "live",
-                  "title": "Family Room",
-                  "camera_image": "camera.family_room_cam_high",
-                  "entities": [
-                    {
-                      "entity": "switch.family_room_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "camera_view": "live",
-                  "type": "picture-glance",
-                  "title": "Dining Room",
-                  "camera_image": "camera.dining_room_cam_high",
-                  "entities": [
-                    {
-                      "entity": "switch.dining_room_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "camera_view": "live",
-                  "type": "picture-glance",
-                  "title": "Kitchen",
-                  "camera_image": "camera.kitchen_cam_high",
-                  "entities": [
-                    {
-                      "entity": "switch.kitchen_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "camera_view": "live",
-                  "type": "picture-glance",
-                  "title": "Living Room",
-                  "camera_image": "camera.living_room_cam_high_2",
-                  "entities": [
-                    {
-                      "entity": "switch.living_room_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "type": "picture-glance",
-                  "camera_view": "live",
-                  "title": "Bedroom",
-                  "camera_image": "camera.bedroom_cam_high",
-                  "entities": [
-                    {
-                      "entity": "switch.bedroom_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "type": "picture-glance",
-                  "camera_view": "live",
-                  "title": "Garage",
-                  "camera_image": "camera.garage_cam_high",
-                  "entities": [
-                    {
-                      "entity": "switch.garage_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "type": "picture-glance",
-                  "camera_view": "live",
-                  "title": "Driveway",
-                  "camera_image": "camera.driveway_cam_high_2",
-                  "entities": [
-                    {
-                      "entity": "switch.driveway_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "type": "picture-glance",
-                  "camera_view": "live",
-                  "title": "Front Yard",
-                  "camera_image": "camera.front_yard_cam_high_3",
-                  "entities": [
-                    {
-                      "entity": "switch.front_yard_cam_recording"
-                    }
-                  ]
-                },
-                {
-                  "type": "picture-glance",
-                  "camera_view": "live",
-                  "title": "Back Yard",
-                  "camera_image": "camera.backyard_cam_high",
-                  "entities": [
-                    {
-                      "entity": "switch.backyard_cam_recording"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "custom:layout-break"
-            },
-            {
-              "square": false,
-              "columns": 2,
-              "type": "grid",
-              "title": "System",
-              "cards": [
-                {
-                  "type": "gauge",
-                  "name": "NAS CPU",
-                  "entity": "sensor.synology_nas_cpu_utilization_total",
-                  "segments": [
-                    {
-                      "from": 0,
-                      "color": "var(--accent-color)"
+                      "type": "gauge",
+                      "name": "NAS Storage",
+                      "entity": "sensor.synology_nas_volume_1_volume_used",
+                      "segments": [
+                        {
+                          "from": 0,
+                          "color": "var(--accent-color)"
+                        },
+                        {
+                          "from": 90,
+                          "color": "var(--primary-color)"
+                        }
+                      ]
                     },
                     {
-                      "from": 90,
-                      "color": "var(--primary-color)"
-                    }
-                  ]
-                },
-                {
-                  "type": "gauge",
-                  "name": "NAS RAM",
-                  "entity": "sensor.synology_nas_memory_usage_real",
-                  "segments": [
-                    {
-                      "from": 0,
-                      "color": "var(--accent-color)"
+                      "type": "custom:mini-graph-card",
+                      "name": "Online Devices",
+                      "entities": [
+                        "sensor.online_devices"
+                      ],
+                      "hours_to_show": 24,
+                      "aggregate_func": "max",
+                      "group_by": "hour",
+                      "decimals": 0,
+                      "font_size": 80,
+                      "smoothing": false,
+                      "show": {
+                        "labels": false,
+                        "graph": "bar"
+                      }
                     },
                     {
-                      "from": 90,
-                      "color": "var(--primary-color)"
-                    }
-                  ]
-                },
-                {
-                  "type": "gauge",
-                  "entity": "sensor.udr_cpu_utilization",
-                  "segments": [
-                    {
-                      "from": 0,
-                      "color": "var(--accent-color)"
+                      "type": "custom:mini-graph-card",
+                      "name": "Download",
+                      "icon": "mdi:trending-down",
+                      "entities": [
+                        "sensor.1m_download_max"
+                      ],
+                      "hours_to_show": 24,
+                      "points_per_hour": 6,
+                      "aggregate_func": "max",
+                      "font_size": 80,
+                      "show": {
+                        "labels": false
+                      }
                     },
                     {
-                      "from": 90,
-                      "color": "var(--primary-color)"
+                      "type": "custom:mini-graph-card",
+                      "name": "Upload",
+                      "icon": "mdi:trending-up",
+                      "entities": [
+                        "sensor.1m_upload_max"
+                      ],
+                      "hours_to_show": 24,
+                      "points_per_hour": 6,
+                      "aggregate_func": "max",
+                      "font_size": 80,
+                      "smoothing": false,
+                      "show": {
+                        "labels": false
+                      }
+                    },
+                    {
+                      "type": "sensor",
+                      "entity": "sensor.top_download_device",
+                      "name": "Top Download",
+                      "icon": "mdi:devices"
+                    },
+                    {
+                      "type": "sensor",
+                      "entity": "sensor.top_upload_device",
+                      "name": "Top Upload",
+                      "icon": "mdi:devices"
+                    },
+                    {
+                      "type": "sensor",
+                      "entity": "sensor.top_download",
+                      "name": "Rate"
+                    },
+                    {
+                      "type": "sensor",
+                      "entity": "sensor.top_upload",
+                      "name": "Rate"
                     }
                   ],
-                  "name": "UDR CPU"
+                  "title": "System"
                 },
                 {
-                  "type": "gauge",
-                  "name": "UDR RAM",
-                  "entity": "sensor.udr_memory_utilization",
-                  "segments": [
+                  "type": "entities",
+                  "entities": [
                     {
-                      "from": 0,
-                      "color": "var(--accent-color)"
+                      "entity": "sensor.adguard_home_dns_queries_blocked_ratio",
+                      "name": "AdGuard Blocked"
                     },
                     {
-                      "from": 200,
-                      "color": "var(--primary-color)"
-                    }
-                  ],
-                  "needle": false
-                },
-                {
-                  "type": "gauge",
-                  "name": "NAS Storage",
-                  "entity": "sensor.synology_nas_volume_1_volume_used",
-                  "segments": [
-                    {
-                      "from": 0,
-                      "color": "var(--accent-color)"
-                    },
-                    {
-                      "from": 90,
-                      "color": "var(--primary-color)"
+                      "entity": "switch.adguard_home_protection",
+                      "name": "AdGuard Blocking",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.adguard_home_off_30_min"
+                      }
                     }
                   ]
-                },
-                {
-                  "type": "custom:mini-graph-card",
-                  "name": "Online Devices",
-                  "entities": [
-                    "sensor.online_devices"
-                  ],
-                  "hours_to_show": 24,
-                  "aggregate_func": "max",
-                  "group_by": "hour",
-                  "decimals": 0,
-                  "font_size": 80,
-                  "smoothing": false,
-                  "show": {
-                    "labels": false,
-                    "graph": "bar"
-                  }
-                },
-                {
-                  "type": "custom:mini-graph-card",
-                  "name": "Download",
-                  "icon": "mdi:trending-down",
-                  "entities": [
-                    "sensor.1m_download_max"
-                  ],
-                  "hours_to_show": 24,
-                  "points_per_hour": 6,
-                  "aggregate_func": "max",
-                  "font_size": 80,
-                  "show": {
-                    "labels": false
-                  }
-                },
-                {
-                  "type": "custom:mini-graph-card",
-                  "name": "Upload",
-                  "icon": "mdi:trending-up",
-                  "entities": [
-                    "sensor.1m_upload_max"
-                  ],
-                  "hours_to_show": 24,
-                  "points_per_hour": 6,
-                  "aggregate_func": "max",
-                  "font_size": 80,
-                  "smoothing": false,
-                  "show": {
-                    "labels": false
-                  }
-                },
-                {
-                  "type": "sensor",
-                  "entity": "sensor.top_download_device",
-                  "name": "Top Download",
-                  "icon": "mdi:devices"
-                },
-                {
-                  "type": "sensor",
-                  "entity": "sensor.top_upload_device",
-                  "name": "Top Upload",
-                  "icon": "mdi:devices"
-                },
-                {
-                  "type": "sensor",
-                  "entity": "sensor.top_download",
-                  "name": "Rate"
-                },
-                {
-                  "type": "sensor",
-                  "entity": "sensor.top_upload",
-                  "name": "Rate"
-                }
-              ]
-            },
-            {
-              "type": "entities",
-              "entities": [
-                {
-                  "entity": "sensor.adguard_home_dns_queries_blocked_ratio",
-                  "name": "AdGuard Blocked"
-                },
-                {
-                  "entity": "switch.adguard_home_protection",
-                  "name": "AdGuard Blocking",
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "script.adguard_home_off_30_min"
-                  }
                 }
               ]
             }
-          ]
-        },
-        {
-          "theme": "Backend-selected",
-          "title": "HVAC",
-          "icon": "",
-          "type": "panel",
-          "badges": [],
-          "cards": [
-            {
-              "type": "custom:mini-graph-card",
-              "name": "Temperature",
-              "entities": [
-                {
-                  "entity": "sensor.average_temperature",
-                  "name": "Average",
-                  "show_fill": false,
-                  "color": "var(--primary-color)"
-                },
-                {
-                  "entity": "climate.ecobee_thermostat",
-                  "attribute": "temperature",
-                  "name": "Target",
-                  "show_fill": false,
-                  "color": "var(--accent-color)"
-                },
-                {
-                  "entity": "sensor.living_room_temperature_2",
-                  "name": "Living Room",
-                  "show_fill": false
-                },
-                {
-                  "entity": "sensor.master_bedroom_temperature_2",
-                  "name": "Master",
-                  "show_fill": false,
-                  "color": "#8C8"
-                },
-                {
-                  "entity": "sensor.family_room_temperature_2",
-                  "name": "Family Room",
-                  "show_fill": false
-                },
-                {
-                  "entity": "sensor.guest_bedroom_temperature_2",
-                  "name": "Guest Bedroom",
-                  "show_fill": false
-                },
-                {
-                  "entity": "sensor.office_temperature_2",
-                  "name": "Office",
-                  "show_fill": false
-                },
-                {
-                  "entity": "binary_sensor.thermostat_heating",
-                  "name": "Heat On",
-                  "color": "red",
-                  "y_axis": "secondary",
-                  "show_points": false,
-                  "show_legend": false,
-                  "show_line": false,
-                  "show_fill": true,
-                  "aggregate_func": "last"
-                },
-                {
-                  "entity": "binary_sensor.thermostat_cooling",
-                  "name": "A/C On",
-                  "color": "blue",
-                  "y_axis": "secondary",
-                  "show_points": false,
-                  "show_legend": false,
-                  "show_line": false,
-                  "show_fill": true,
-                  "aggregate_func": "last"
-                }
-              ],
-              "cache": false,
-              "hours_to_show": 24,
-              "points_per_hour": 12,
-              "aggregate_func": "avg",
-              "font_size": 120,
-              "font_size_header": 20,
-              "line_width": 0.5,
-              "smoothing": false,
-              "lower_bound": 60,
-              "upper_bound": 90,
-              "min_bound_range": 10,
-              "lower_bound_secondary": 0.01,
-              "upper_bound_secondary": 1,
-              "show": {
-                "labels": true,
-                "labels_secondary": false,
-                "points": "hover"
-              },
-              "state_map": [
-                {
-                  "value": "off",
-                  "label": "off"
-                },
-                {
-                  "value": "on",
-                  "label": "on"
-                }
-              ]
+          ],
+          "header": {
+            "card": {
+              "type": "markdown",
+              "content": "# {{ now().timestamp() | timestamp_custom('%A %B %-d, %Y') }}\n## {{ now().timestamp() | timestamp_custom('%I:%M %p') }}"
             }
-          ]
+          }
         }
       ],
       "title": "Home"
