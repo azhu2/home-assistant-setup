@@ -130,6 +130,10 @@ ecobee_automation:
         - condition: state
           entity_id: climate.bedroom_ac
           state: 'off'
+        - condition: numeric_state
+          entity_id: climate.bedroom_ac
+          attribute: current_temperature
+          above: 84
         then:
         - action: climate.set_temperature
           data:
