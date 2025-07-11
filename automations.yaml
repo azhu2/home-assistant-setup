@@ -407,8 +407,12 @@
   alias: Hourly Climate Trigger
   description: ''
   triggers:
-  - trigger: time_pattern
-    hours: /1
+  - trigger: time
+    at: 09:00:00
+  - trigger: time
+    at: '19:00:00'
+  - trigger: time
+    at: 00:00:00
   conditions:
   - condition: numeric_state
     entity_id: zone.home
@@ -417,4 +421,50 @@
   - action: script.1750553017670
     metadata: {}
     data: {}
+  mode: single
+- id: '1751266874260'
+  alias: Reload Unifi Oldest Rec
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - switch.uck_g2_plus_analytics_enabled
+    from: unavailable
+  conditions: []
+  actions:
+  - action: homeassistant.reload_config_entry
+    metadata: {}
+    data: {}
+    target:
+      entity_id: sensor.unifi_oldest_recording
+  mode: single
+- id: '1752214891237'
+  alias: Grow Lights Off
+  description: ''
+  triggers:
+  - trigger: sun
+    event: sunset
+    offset: '1:00:00'
+  conditions: []
+  actions:
+  - action: scene.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: scene.grow_lights_off
+  mode: single
+- id: '1752214923046'
+  alias: Grow Lights On
+  description: ''
+  triggers:
+  - trigger: time
+    at: 09:00:00
+  conditions: []
+  actions:
+  - action: scene.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id:
+      - scene.grow_lights_on
   mode: single

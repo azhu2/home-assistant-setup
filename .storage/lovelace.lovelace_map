@@ -50,6 +50,22 @@
                   ]
                 },
                 {
+                  "title": "Grow Lights",
+                  "columns": 2,
+                  "square": false,
+                  "type": "grid",
+                  "cards": [
+                    {
+                      "type": "tile",
+                      "entity": "switch.bedroom_grow_lights"
+                    },
+                    {
+                      "type": "tile",
+                      "entity": "switch.living_room_grow_lights"
+                    }
+                  ]
+                },
+                {
                   "type": "grid",
                   "title": "Outside",
                   "square": false,

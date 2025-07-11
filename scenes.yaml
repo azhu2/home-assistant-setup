@@ -52,3 +52,27 @@
   entities:
     switch.small_fan:
       state: 'off'
+- id: '1752214787515'
+  name: Grow Lights Off
+  entities:
+    switch.bedroom_grow_lights:
+      icon: mdi:lamp
+      friendly_name: Bedroom Grow Lights
+      state: 'off'
+    switch.living_room_grow_lights:
+      icon: mdi:lamp
+      friendly_name: Living Room Grow Lights
+      state: 'off'
+  metadata: {}
+- id: '1752214811371'
+  name: Grow Lights On
+  entities:
+    switch.bedroom_grow_lights:
+      icon: mdi:lamp
+      friendly_name: Bedroom Grow Lights
+      state: 'on'
+    switch.living_room_grow_lights:
+      icon: mdi:lamp
+      friendly_name: Living Room Grow Lights
+      state: 'on'
+  metadata: {}
