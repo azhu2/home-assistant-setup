@@ -112,7 +112,7 @@
                 },
                 {
                   "type": "thermostat",
-                  "entity": "climate.office_ac",
+                  "entity": "climate.office_ac_ha",
                   "features": [
                     {
                       "type": "climate-hvac-modes"
@@ -121,7 +121,7 @@
                 },
                 {
                   "type": "thermostat",
-                  "entity": "climate.bedroom_ac",
+                  "entity": "climate.bedroom_ac_ha",
                   "features": [
                     {
                       "type": "climate-hvac-modes"

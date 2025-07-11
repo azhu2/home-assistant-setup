@@ -16,3 +16,23 @@
     remote_entity: remote.bedroom_remote
   temperature_sensor: sensor.bedroom_remote_temperature
   humidity_sensor: sensor.bedroom_remote_humidity
+- platform: dual_smart_thermostat
+  name: Office AC (HA)
+  heater: switch.office_heat_toggle
+  cooler: switch.office_ac_toggle
+  target_sensor: sensor.office_remote_temperature
+  humidity_sensor: sensor.office_remote_humidity
+  min_temp: 60
+  max_temp: 85
+  initial_hvac_mode: "off"
+  precision: 1.0
+- platform: dual_smart_thermostat
+  name: Bedroom AC (HA)
+  heater: switch.bedroom_heat_toggle
+  cooler: switch.bedroom_ac_toggle
+  target_sensor: sensor.bedroom_remote_temperature
+  humidity_sensor: sensor.bedroom_remote_humidity
+  min_temp: 60
+  max_temp: 85
+  initial_hvac_mode: "off"
+  precision: 1.0
