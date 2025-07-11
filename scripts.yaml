@@ -125,22 +125,20 @@ ecobee_automation:
           data:
             hvac_mode: 'off'
           target:
-            entity_id: climate.office_ac
+            entity_id:
+            - climate.office_ac_ha
       - if:
         - condition: state
           entity_id: climate.bedroom_ac
           state: 'off'
-        - condition: numeric_state
-          entity_id: climate.bedroom_ac
-          attribute: current_temperature
-          above: 84
         then:
         - action: climate.set_temperature
           data:
-            temperature: 80
+            temperature: 78
             hvac_mode: cool
           target:
-            entity_id: climate.bedroom_ac
+            entity_id:
+            - climate.bedroom_ac_ha
     - conditions:
       - condition: time
         after: 09:00:00
@@ -157,7 +155,8 @@ ecobee_automation:
           data:
             hvac_mode: 'off'
           target:
-            entity_id: climate.bedroom_ac
+            entity_id:
+            - climate.bedroom_ac_ha
       - if:
         - condition: state
           entity_id: climate.office_ac
@@ -172,9 +171,10 @@ ecobee_automation:
         then:
         - action: climate.set_temperature
           data:
-            temperature: 82
+            temperature: 80
             hvac_mode: cool
           target:
-            entity_id: climate.office_ac
+            entity_id:
+            - climate.office_ac_ha
   alias: Mini Split Schedule
   description: ''
