@@ -24,16 +24,14 @@
     data: {}
   - data: {}
     action: script.indoor_cameras_on
-  - action: climate.turn_off
+  - action: climate.set_preset_mode
     metadata: {}
-    data: {}
+    data:
+      preset_mode: away
     target:
-      entity_id: climate.bedroom_ac
-  - action: climate.turn_off
-    metadata: {}
-    data: {}
-    target:
-      entity_id: climate.office_ac
+      entity_id:
+      - climate.bedroom_ac_ha
+      - climate.office_ac_ha
   mode: single
 - id: '1652605093279'
   alias: Coming Home
