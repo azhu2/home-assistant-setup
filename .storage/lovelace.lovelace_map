@@ -129,6 +129,16 @@
                       "style": "dropdown"
                     }
                   ]
+                },
+                {
+                  "type": "thermostat",
+                  "entity": "climate.downstairs_ac_ha",
+                  "features": [
+                    {
+                      "type": "climate-preset-modes",
+                      "style": "dropdown"
+                    }
+                  ]
                 }
               ]
             },
