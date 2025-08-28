@@ -115,7 +115,8 @@
                   "entity": "climate.office_ac_ha",
                   "features": [
                     {
-                      "type": "climate-hvac-modes"
+                      "type": "climate-preset-modes",
+                      "style": "dropdown"
                     }
                   ]
                 },
@@ -124,7 +125,8 @@
                   "entity": "climate.bedroom_ac_ha",
                   "features": [
                     {
-                      "type": "climate-hvac-modes"
+                      "type": "climate-preset-modes",
+                      "style": "dropdown"
                     }
                   ]
                 }
