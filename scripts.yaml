@@ -126,7 +126,9 @@ ecobee_automation:
         data:
           preset_mode: home
         target:
-          entity_id: climate.office_ac_ha
+          entity_id:
+          - climate.office_ac_ha
+          - climate.downstairs_ac_ha
     - conditions:
       - condition: time
         after: 09:00:00
@@ -136,7 +138,9 @@ ecobee_automation:
         data:
           preset_mode: home
         target:
-          entity_id: climate.bedroom_ac_ha
+          entity_id:
+          - climate.bedroom_ac_ha
+          - climate.downstairs_ac_ha
       - if:
         - condition: time
           weekday:
@@ -167,5 +171,6 @@ ecobee_automation:
         entity_id:
         - climate.bedroom_ac_ha
         - climate.office_ac_ha
+        - climate.downstairs_ac_ha
   alias: Mini Split Schedule
   description: ''

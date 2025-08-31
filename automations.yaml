@@ -32,6 +32,7 @@
       entity_id:
       - climate.bedroom_ac_ha
       - climate.office_ac_ha
+      - climate.downstairs_ac_ha
   mode: single
 - id: '1652605093279'
   alias: Coming Home
